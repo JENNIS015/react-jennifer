@@ -1,7 +1,6 @@
 import React from 'react'
 import "../css/style.css"
 
-
 const NavBar = () => {
     return (
         <nav className="Navbar">
