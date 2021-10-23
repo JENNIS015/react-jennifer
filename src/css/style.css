@@ -24,7 +24,7 @@ body {
 }
 
 
- .Navbar {
+.Navbar {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
@@ -39,16 +39,19 @@ body {
   position: relative;
   transition: all 0.3s ease-in-out;
 }
-.container{
-  width: 60%!important;
+
+.container {
+  width: 60% !important;
 }
 
-.cantidadAgregada{
-  margin:10px;
+.cantidadAgregada {
+  margin: 10px;
 }
-.quantity-input{
+
+.quantity-input {
   text-align: center;
 }
+
 .Navbar ul {
   display: flex;
   justify-content: flex-end;
@@ -98,30 +101,33 @@ h1 {
 }
 
 
-.logo_icono{
+.logo_icono {
   width: 50px;
-  margin:10px 20px;
+  margin: 10px 20px;
 }
 
 nav {
   backdrop-filter: blur(15px) brightness(75%) saturate(70%);
 }
+
 .modal-overlay {
-	backdrop-filter: blur(5px);
-	opacity: 1!important; 
-	background: rgba(0,0,0,0.5);  
+  backdrop-filter: blur(5px);
+  opacity: 1 !important;
+  background: rgba(0, 0, 0, 0.5);
 }
+
 .quantity-input input {
   max-width: 50px;
 }
 
 .card .card-image img {
- 
+
   max-height: 250px;
   margin: 10px;
 }
+
 .card .card-title {
- font-size: 12px!important; 
+  font-size: 12px !important;
 
 }
 
@@ -132,17 +138,17 @@ nav {
 }
 
 @media (max-width: 400px) {
- .Navbar h2 {
+  .Navbar h2 {
     display: none;
   }
+
   .Navbar ul {
     grid-column: 1/3;
     flex-direction: column;
     align-items: center;
   }
+
   .App .Navbar ul li {
     margin: 0.5rem 0;
   }
 }
-
-

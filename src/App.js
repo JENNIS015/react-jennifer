@@ -8,31 +8,23 @@ import './css/style.css'
 function App() {
   return (
     <div>
-      <NavBar />
+      <NavBar/>
       <div className="container">
-      <div className="row">
-            
-            {data.map(tarjetaProducto => (
-              <Tarjetas
-              key={tarjetaProducto.id}
-              title={tarjetaProducto.title}
-              image={tarjetaProducto.image}
-              price={tarjetaProducto.price}
-              quantity={tarjetaProducto.quantity}
-            />
-            ))}
-     
+        <div className="row">
 
+          {data.map(tarjetaProducto => (<Tarjetas
+            key={tarjetaProducto.id}
+            title={tarjetaProducto.title}
+            image={tarjetaProducto.image}
+            price={tarjetaProducto.price}
+            quantity={tarjetaProducto.quantity}/>))}
 
-
-            
-          </div>
+        </div>
 
       </div>
-      
+
     </div>
   )
 }
 
 export default App;
-
