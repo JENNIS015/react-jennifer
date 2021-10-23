@@ -4,7 +4,7 @@ import "../css/style.css"
 export const CartWidget = () => {
     return (
         <div>
-              <i class="large material-icons">shopping_cart</i>
+              <i className="large material-icons">shopping_cart</i>
              
         </div>
     )

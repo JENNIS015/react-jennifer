@@ -1,14 +1,38 @@
 import React from "react";
 import NavBar from "./components/NavBar.jsx";
 import 'materialize-css/dist/css/materialize.min.css'
-import ItemListContainer from "./components/ItemListContainer.jsx";
+import data from "./components/data.jsx";
+import Tarjetas from "./components/itemCount.jsx";
+import './css/style.css'
 
-export default function App() {
+function App() {
   return (
-    <div className="App">
+    <div>
       <NavBar />
-      <ItemListContainer who="Jennifer"/>
+      <div className="container">
+      <div className="row">
+            
+            {data.map(tarjetaProducto => (
+              <Tarjetas
+              key={tarjetaProducto.id}
+              title={tarjetaProducto.title}
+              image={tarjetaProducto.image}
+              price={tarjetaProducto.price}
+              quantity={tarjetaProducto.quantity}
+            />
+            ))}
+     
+
+
+
+            
+          </div>
+
+      </div>
+      
     </div>
-  );
+  )
 }
+
+export default App;
 
