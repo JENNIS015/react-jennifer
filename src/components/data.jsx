@@ -1,4 +1,4 @@
-export default [
+export const data= [
     {
         id: 1,
         title: 'Notebook ASUS x509 15.6" Celeron N4020 4GB 500GB Win10 ',
@@ -36,4 +36,11 @@ export default [
           }
 
 
-]
+];
+ 
+
+export const getProductos = new Promise((res, rej) => {
+  setTimeout(() => {
+    res(data);
+  }, 2000);
+});

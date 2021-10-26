@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React,{useState} from 'react';
 
 export default function Tarjetas({price, title, image, quantity}) {
   const [count,
@@ -19,6 +19,10 @@ export default function Tarjetas({price, title, image, quantity}) {
   const agregarCarrito = () => {
     alert("Se agregó " + count + " " + title)
   }
+
+
+  
+
   return (
 
     <div className="col s12 m6 l4">
@@ -46,3 +50,6 @@ export default function Tarjetas({price, title, image, quantity}) {
     </div >
   );
 }
+
+
+
