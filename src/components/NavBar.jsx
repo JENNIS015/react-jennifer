@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react'
 import "../css/style.css"
 import {CartWidget} from './CartWidget';
@@ -9,22 +10,21 @@ const NavBar = () => {
         <div className="nav-wrapper">
           <div className="row">
             <div className="col s12">
-              <a className="brand-logo">
+              <Link to ="/" className="brand-logo">
                 <span className="hide-on-small-only">Mi Negocio</span>
+              </Link>
 
-              </a>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li>
-                  <a href="/acerca">Acerca</a>
+                 <li>
+                  <Link to="/">Home</Link>
                 </li>
+
                 <li>
-                  <a href="/projecto">Productos</a>
+                  <Link to="/categoria/gorras">Gorras</Link>
                 </li>
+
                 <li>
-                  <a href="/contacto">Contacto</a>
-                </li>
-                <li>
-                  <CartWidget></CartWidget>
+                 <Link to='/cart'> <CartWidget></CartWidget></Link>
                 </li>
               </ul>
 

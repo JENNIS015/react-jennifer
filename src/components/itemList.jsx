@@ -1,13 +1,17 @@
 import {useState, useEffect} from 'react/cjs/react.development';
 import {getProductos} from './data';
 import detalleProducto from './item'
+import { useParams } from 'react-router-dom';
 
 
-
-export const ProductosApi = () => {
+export const ItemListContainer = () => {
 
   const [product,setProduct] = useState([])
   const [loading, setLoading] =useState(true)
+
+  const {idCategoria} = useParams()
+
+
   useEffect(() => {
     getProductos.then((res) => {
       setProduct(res)
@@ -18,10 +22,6 @@ export const ProductosApi = () => {
       .finally(() => setLoading(false))
   }, [])
 
-
-
-
-  console.log(product);
   return ( loading ? <h2>Cargando..</h2>:
       product.map(tarjetaProducto =>     <div className="col s12 m6 l4" key={tarjetaProducto.id}><div className="card">
       <div className="card-image waves-effect waves-block waves-light">
