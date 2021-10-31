@@ -15,7 +15,7 @@ export const ItemDetail = ({imagen, title, price, id,stock }) => {
         <p>ARS {price}</p>
 
         </div>
-        <ItemCount stock={stock} initial="1" onAdd={title} />
+        <ItemCount stock={stock} initial="1" onAdd={`${title} - ${price}`} />
         <div>
           <button className="btn">Comprar</button>
         </div>

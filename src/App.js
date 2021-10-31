@@ -3,31 +3,30 @@ import React from "react";
 import NavBar from "./components/navbar/NavBar.jsx";
 import 'materialize-css/dist/css/materialize.min.css'
 import './css/style.css'
-import {ItemListContainer} from "./components/ItemListContainer.jsx";
-import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
-import { Cart } from './components/cart/cart.jsx';
+
+import ItemDetailContainer from "./components/container/itemDetailContainer/ItemDetailContainer.jsx";
+import {Cart} from './components/cart/cart.jsx';
+import { ItemListContainer } from './components/container/itemListContainer/ItemListContainer.jsx';
 
 function App() {
   return (
     <div>
 
-
       <Router>
-
       <NavBar/>
-        <Switch>
-          <div className="container">
-            <div className="row">
-              <Route exact path='/'>
-                  <ItemListContainer/>
-              </Route>
+         
+            <div className="container">
+              <div className="row">
+              <Switch>
+                <Route exact path='/' component={ItemListContainer}/>
 
-              <Route path='/detalle/' component={ItemDetailContainer} />
-              <Route path='/cart' component={Cart} />
-              
+                <Route exact path='/categoria/:id' component={ItemListContainer}/>
+                <Route exact path='/detalle/:id' component={ItemDetailContainer}/>
+                <Route exact path='/cart' component={Cart}/>
+              </Switch>
+              </div>
             </div>
-          </div>
-        </Switch>
+       
       </Router>
     </div>
   )

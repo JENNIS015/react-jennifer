@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react/cjs/react.development';
-import {ItemDetail} from './ItemDetail';
+import {ItemDetail} from './itemDetail/ItemDetail';
 
 export default function ItemDetailContainer() {
 

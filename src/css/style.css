@@ -136,6 +136,13 @@ nav {
   
 }
 
+.currencyCategory{
+  background-color:red;
+}
+
+.menuEstandar{
+  color:grey
+}
 @media (max-width: 750px) {
   .Navbar h2:before {
     display: none;
