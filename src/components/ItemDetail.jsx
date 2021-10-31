@@ -1,6 +1,7 @@
 import React from 'react';
+import ItemCount from './ItemCount';
 
-export const ItemDetail = ({imagen, title, price, id}) => {
+export const ItemDetail = ({imagen, title, price, id,stock }) => {
 
   return (
     <div className="col s12 m6 l6" key={id}>
@@ -14,11 +15,12 @@ export const ItemDetail = ({imagen, title, price, id}) => {
         <p>ARS {price}</p>
 
         </div>
-
+        <ItemCount stock={stock} initial="1" onAdd={title} />
         <div>
           <button className="btn">Comprar</button>
         </div>
       </div>
     </div>
+  
   )
 }

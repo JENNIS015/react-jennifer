@@ -131,6 +131,11 @@ nav {
 
 }
 
+.agregarCarrito{
+  margin-top:20px;
+  
+}
+
 @media (max-width: 750px) {
   .Navbar h2:before {
     display: none;

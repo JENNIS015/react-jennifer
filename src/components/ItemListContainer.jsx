@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react/cjs/react.development';
-import {getProductos} from './data';
-import detalleProducto from './item'
+import {getProductos} from './data/Data';
+import detalleProducto from './Item'
 import { useParams } from 'react-router-dom';
 
 
@@ -29,7 +29,7 @@ export const ItemListContainer = () => {
       </div>
 
       <div className="card-content">
-        <span>{tarjetaProducto.title}</span>
+        <span>{tarjetaProducto.title}</span> 
         <p>ARS {tarjetaProducto.price}</p>
       </div>
 

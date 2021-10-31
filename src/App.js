@@ -1,9 +1,9 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import React from "react";
-import NavBar from "./components/NavBar.jsx";
+import NavBar from "./components/navbar/NavBar.jsx";
 import 'materialize-css/dist/css/materialize.min.css'
 import './css/style.css'
-import {ItemListContainer} from "./components/itemList.jsx";
+import {ItemListContainer} from "./components/ItemListContainer.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
 import { Cart } from './components/cart/cart.jsx';
 

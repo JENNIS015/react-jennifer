@@ -1,5 +1,4 @@
 import React from 'react'
-//import {getProductos} from './data';
 import {useState, useEffect} from 'react/cjs/react.development';
 import {ItemDetail} from './ItemDetail';
 
@@ -11,7 +10,7 @@ const dataExample=
             title: 'Notebook ASUS x509 15.6" Celeron N4020 4GB 500GB Win10 ',
             image: 'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_21800_Notebook_ASUS_x509_15.6__Celeron_N4020_4GB_500GB_Win10_e0bd2853-grn.jpg',
             price: 56420,
-            quantity: 5
+            stock: 5
           } 
         
  const getItems = new Promise((res, rej) => {
@@ -38,8 +37,8 @@ const dataExample=
             <ItemDetail imagen = {prodIndividual.image}
             id = {prodIndividual.id}
             title={prodIndividual.title}
-            price= {prodIndividual.price}>
-                
+            price= {prodIndividual.price}
+             stock= {prodIndividual.stock}>   
             </ItemDetail>
         </div>
     )
