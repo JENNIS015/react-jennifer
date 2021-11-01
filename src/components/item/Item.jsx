@@ -17,7 +17,6 @@ export default function Item({prod}) {
           <div>
               <Link to={`/item/${prod.id}`}>
               <button className="btn">Detalle</button>
-
               </Link>
             
           </div>

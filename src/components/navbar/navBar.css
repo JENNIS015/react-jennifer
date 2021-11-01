@@ -1,0 +1,88 @@
+
+  /*navbar*/
+  nav {
+    backdrop-filter: blur(15px) brightness(75%) saturate(70%);
+  }
+
+  .Navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.25rem 0.75rem;
+    list-style: none;
+  }
+  
+  .Navbar ul li {
+    margin: 0 0.75rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  
+  .Navbar ul li a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0 0.25rem;
+    letter-spacing: 0.2rem;
+    position: relative;
+  }
+  
+  .Navbar ul li a:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-out;
+  }
+  
+  
+  .Navbar ul li a:before {
+    background: var(--color-menu);
+  }
+  
+  .Navbar ul li a:hover:before {
+    bottom: -5px;
+  }
+
+  .Navbar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: var(--color-menu);
+  }
+  
+  .Navbar h2 {
+    padding: 0.25rem 0.75rem;
+    font-size: 2.5rem;
+    color: var(--color-oscuro);
+    background: var(--color-logo);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  .menuEstandar{
+    color:var(--color-blanco);
+  }
+nav{
+    background-color: #0c1d25!important;
+}
+  @media (max-width: 750px) {
+    .Navbar h2:before {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .Navbar h2 {
+      display: none;
+    }
+  
+    .Navbar ul {
+      grid-column: 1/3;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .App .Navbar ul li {
+      margin: 0.5rem 0;
+    }
+  }

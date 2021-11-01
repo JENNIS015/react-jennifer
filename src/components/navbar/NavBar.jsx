@@ -1,17 +1,19 @@
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import React from 'react'
 import {CartWidget} from './CartWidget';
+import './navBar.css';
 
 const NavBar = () => {
   return (
     <div className="navbar-fixed">
-      <nav className="transparent">
+      <nav className="">
         <div className="nav-wrapper">
           <div className="row">
             <div className="col s12">
               <Link to ="/" className="brand-logo">
                 <span className="hide-on-small-only">Mi Negocio</span>
               </Link>
+       
 
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                  <li>
@@ -35,7 +37,10 @@ const NavBar = () => {
           </div>
         </div>
       </nav>
+   
     </div>
+
+ 
 
   )
 }
