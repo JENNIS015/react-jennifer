@@ -11,7 +11,7 @@ export const ItemDetail = ({imagen, title, price, id, stock}) => {
   }
 
   const onAdd = (count) => {
-    alert("Se agregó " + count + ' ' + title)
+    console.log("Se agregó " + count + ' ' + title)
   }
   return (
     <div className="col s12 m12 l12 flex" key={id}>

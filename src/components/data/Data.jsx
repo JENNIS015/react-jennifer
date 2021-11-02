@@ -9,7 +9,7 @@ export const Data = [
     categoria: 'electronica'
   }, {
     id: 2,
-    title: 'Notebook Lenovo 14" AMD Pro A4-4350B 4GB 500GB DOS',
+    title: 'Notebook Lenovo 14" AMD Pro A4-4350B 4GB 500GB DOS Especial',
     image: 'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_2415' +
         '8_Notebook_Lenovo_14__AMD_Pro_A4-4350B_4GB_500GB_DOS_28a58e50-grn.jpg',
     price: 57480,
