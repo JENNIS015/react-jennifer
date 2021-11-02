@@ -16,24 +16,30 @@ export default function ItemCount({stock, onAdd}) {
   };
 
   return (
-    <div>
+    <div className="count">
    
       <div className="quantity-input">
-        <button onClick={disminuyeContador}>
+        <button className="minus" onClick={disminuyeContador}>
           -
         </button>
-        <span className="cantidadAgregada">
+        <span className="number-input">
           {count}
         </span>
-        <button onClick={aumentarContador}>
+        <span className="plus" onClick={aumentarContador}>
           +
-        </button>
+        </span>
     
       </div>
 
       <div className="agregarCarrito">
-      <button className="btn" onClick={()=>onAdd(count)}> Agregar</button>
-        </div>
+
+       <button className="addtocart" onClick={()=>onAdd(count)}>
+         <div className="pretext">
+          <i className="material-icons">shopping_cart</i> AGREGAR
+         </div>
+  
+      </button>
+     </div>
     </div>
   );
 }

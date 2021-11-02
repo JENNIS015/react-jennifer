@@ -1,0 +1,10 @@
+.detalle {
+ 
+    width: 100%;
+    background-color: #dddddd;
+    color: #0c1d25;
+    font-weight: 800;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}

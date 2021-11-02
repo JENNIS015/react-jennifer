@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react/cjs/react.development';
 import {useParams} from 'react-router-dom';
 import {getProductos} from '../../data/Data';
 import ItemList from '../../itemList/ItemList';
+import '../itemListContainer/itemListContainer.css'
 
 export const ItemListContainer = () => {
 
@@ -29,8 +30,6 @@ export const ItemListContainer = () => {
     }
 
   }, [id])
-
-  console.log(id)
 
   return (loading
     ? <h2>Cargando..</h2>

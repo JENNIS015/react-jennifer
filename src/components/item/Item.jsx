@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 export default function Item({prod}) {
+  function currencyFormat(num) {
+    return '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+ }
   return (
     <div>
       <div className="col s12 m6 l4" key={prod.id}>
@@ -11,12 +15,12 @@ export default function Item({prod}) {
 
           <div className="card-content">
             <span>{`${prod.title} - ${prod.categoria}`}</span>
-            <p>ARS {prod.price}</p>
+            <p> {currencyFormat(prod.price)}</p>
           </div>
 
           <div>
               <Link to={`/item/${prod.id}`}>
-              <button className="btn">Detalle</button>
+              <button className="detalle">Detalle</button>
               </Link>
             
           </div>
