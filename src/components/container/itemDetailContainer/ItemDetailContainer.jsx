@@ -36,11 +36,15 @@ console.log(productIndiv)
   return (loading
     ? <h5>Cargando el producto..</h5>
     : <div>
+      <div className="container">
+      <div className="row">
       <ItemDetail
         imagen={productIndiv.image}
         id={productIndiv.id}
         title={productIndiv.title}
         price={productIndiv.price}
         stock={productIndiv.stock}></ItemDetail>
+    </div>
+    </div>
     </div>)
 }

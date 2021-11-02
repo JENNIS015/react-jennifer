@@ -1,0 +1,14 @@
+h5 .producto {
+    flex: auto;
+    font-size: 22px;
+    margin-bottom: 8px;
+    margin-right: 15px;
+    padding: 0;
+}
+.price{
+    display: inline-block;
+    line-height: 1em;
+    overflow: visible;
+    font-weight: 400;
+    
+}

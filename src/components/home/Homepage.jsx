@@ -14,7 +14,7 @@ export default function Homepage() {
 
             <ul className="list-inline intro-social-buttons">
               <li>
-                <a href="#">
+                <a href="/">
                   <button className="btn animated">
                     <span className="network-name">Ofertas</span>
                   </button>
