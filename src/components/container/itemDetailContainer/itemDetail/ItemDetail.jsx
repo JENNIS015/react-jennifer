@@ -2,7 +2,7 @@ import React from 'react';
 import ItemCount from './ItemCount';
 import './itemDetail-style.css'
 
-export const ItemDetail = ({imagen, title, price, id, stock}) => {
+export const ItemDetail = ({prod}) => {
 
   function currencyFormat(num) {
     return '$' + num
@@ -11,22 +11,22 @@ export const ItemDetail = ({imagen, title, price, id, stock}) => {
   }
 
   const onAdd = (count) => {
-    console.log("Se agregó " + count + ' ' + title)
+    console.log("Se agregó " + count + ' ' + prod.title)
   }
   return (
-    <div className="col s12 m12 l12 flex" key={id}>
+    <div className="col s12 m12 l12 flex" key={prod.id}>
       <div className="card">
         <div className="card-image waves-effect waves-block waves-light">
           <div className="col s12 m7 l7">
-            <img src={imagen} alt={title}/>
+            <img  alt={prod.title} src={prod.image}/>
           </div>
 
           <div className="col s12 m5 l5 detalleProducto">
-            <h5 className="producto">{title}</h5>
+            <h5 className="producto">{prod.title}</h5>
             <span className="price">
-              {currencyFormat(price)}</span>
+              {currencyFormat(prod.price)}</span>
 
-            <ItemCount stock={stock} initial="1" onAdd={onAdd}/>
+            <ItemCount stock={prod.stock} initial="1" onAdd={onAdd}/>
             <button className="pretext comprar">COMPRAR</button>
           </div>
         </div>

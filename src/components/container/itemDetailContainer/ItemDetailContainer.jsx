@@ -38,12 +38,7 @@ console.log(productIndiv)
     : <div>
       <div className="container">
       <div className="row">
-      <ItemDetail
-        imagen={productIndiv.image}
-        id={productIndiv.id}
-        title={productIndiv.title}
-        price={productIndiv.price}
-        stock={productIndiv.stock}></ItemDetail>
+      <ItemDetail prod= {productIndiv}/>
     </div>
     </div>
     </div>)
