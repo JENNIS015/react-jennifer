@@ -9,14 +9,7 @@
   --color-menu: #16A085;
 }
   
-  .intro-header {
-      padding-bottom: 50px;
-      text-align: left;
-      color: #f8f8f8;
-      background-image:url("../../image/portada.png");
-      height:450px
-
-  }
+  
   
   .intro-message {
       position: relative;
@@ -25,7 +18,7 @@
       margin-left:7%;
   }
   
-  
+
   .intro-message > h3 {
       margin-top: 20;
       font-size: 2.5em;

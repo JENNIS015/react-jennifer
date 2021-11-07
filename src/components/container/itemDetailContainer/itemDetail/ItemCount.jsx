@@ -31,7 +31,8 @@ export default function ItemCount({stock, onAdd}) {
     
       </div>
 
-      <div className="agregarCarrito">
+    
+      <div  className="agregarCarrito">
 
        <button className="addtocart" onClick={()=>onAdd(count)}>
          <div className="pretext">
@@ -39,6 +40,7 @@ export default function ItemCount({stock, onAdd}) {
          </div>
   
       </button>
+      
      </div>
     </div>
   );

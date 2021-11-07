@@ -9,6 +9,7 @@ export default function Homepage() {
       <div className="row">
         <div className="col-lg-4">
           <div className="intro-message">
+       
             <h1 className="animated slideInLeft">Encuentra la tecnologia que necesitas.</h1>
             <h3 className="animated slideInRight">Explora las opciones.</h3>
 

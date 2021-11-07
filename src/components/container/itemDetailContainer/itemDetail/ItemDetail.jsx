@@ -1,16 +1,20 @@
-import React from 'react';
+import React,{useState} from 'react';
 import ItemCount from './ItemCount';
 import './itemDetail-style.css'
+import { Link } from 'react-router-dom';
 
 export const ItemDetail = ({prod}) => {
 
+  
   function currencyFormat(num) {
     return '$' + num
       .toFixed(2)
       .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
   }
 
-  const onAdd = (count) => {
+  const [inputType, setInputType] = useState('input')
+  function onAdd (count) {
+    setInputType('button')
     console.log("Se agregó " + count + ' ' + prod.title)
   }
   return (
@@ -25,9 +29,17 @@ export const ItemDetail = ({prod}) => {
             <h5 className="producto">{prod.title}</h5>
             <span className="price">
               {currencyFormat(prod.price)}</span>
-
-            <ItemCount stock={prod.stock} initial="1" onAdd={onAdd}/>
-            <button className="pretext comprar">COMPRAR</button>
+             
+            <div onClick={()=>onAdd}>
+              {
+                inputType === 'input'?
+                <ItemCount stock={prod.stock} initial="1" onAdd={onAdd}/>
+                :
+                <Link to="/cart" className="pretext comprar">Ir a Carrito</Link>  
+              }
+            
+            </div>
+            
           </div>
         </div>
         <div></div>

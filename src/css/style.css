@@ -80,4 +80,11 @@ h1 {
   background-color:red;
 }
 
+.intro-header {
+  padding-bottom: 50px;
+  text-align: left;
+  color: #f8f8f8;
+ background-image: url("http://localhost:3000/assets/image/portada.png"); 
+  height:450px;
 
+}
