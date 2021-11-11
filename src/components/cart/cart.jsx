@@ -2,9 +2,10 @@ import React from 'react'
 import {useCartContext} from '../../context/CartContext'
 import CartItem from './CartItem'
 export default function Cart() {
-  const {cartList} = useCartContext()
+  const {cartList, deleteAll} = useCartContext()
 
   return (
+      
     <div className="container">
     <div className="row">
       <table>
@@ -24,7 +25,7 @@ export default function Cart() {
         </tr>
 
         {cartList.map(prodCart => <CartItem key={prodCart.prod.id} productos={prodCart}/>)}
-
+      <button onClick= {() => deleteAll()}>Vaciar Carrito</button>
       </table>
     </div></div>
   )
