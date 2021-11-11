@@ -5,21 +5,19 @@ const CartContext = createContext()
 export const useCartContext = () => useContext(CartContext)
 
 export const CartContextProvider = ({children}) => {
-  const [cartList,setCartList] = useState([])
+  const [cartList,
+    setCartList] = useState([])
 
-  function addItems(items, count) {
+  
+  const addItems = (items) =>{
 
     const checkNuevo = cartList.find(item => item.prod.id === items.prod.id);
-    //console.log(checkNuevo)
-    //console.log(items.prod.id)
-
     if (checkNuevo) {
-      
-      checkNuevo.cantidad= checkNuevo.cantidad + items.cantidad  
-     // console.log(  checkNuevo.cantidad )
+      checkNuevo.cantidad = checkNuevo.cantidad + items.cantidad
+      // console.log(  checkNuevo.cantidad )
       setCartList(cartList)
       console.log('Se agrego cantidad')
-      
+
     } else {
       setCartList([
         ...cartList,
@@ -27,6 +25,12 @@ export const CartContextProvider = ({children}) => {
       ])
     }
   }
+  
+  const deleteItems =(items) => {
+    const checkSeleccionado = cartList.find(item => item.prod.id === items.prod.id);
+
+
+  }  
   const mostrarListado = () => {
     console.log(cartList)
   }
@@ -35,7 +39,8 @@ export const CartContextProvider = ({children}) => {
       value={{
       cartList,
       mostrarListado,
-      addItems
+      addItems, 
+      deleteItems
     }}>
       {children}
     </CartContext.Provider>

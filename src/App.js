@@ -4,7 +4,7 @@ import 'materialize-css/dist/css/materialize.min.css'
 import './css/style.css'
 import Homepage from './components/home/Homepage.jsx';
 import ItemDetailContainer from "./components/container/itemDetailContainer/ItemDetailContainer.jsx";
-import {Cart} from './components/cart/cart.jsx';
+import Cart from './components/cart/Cart.jsx';
 import {ItemListContainer} from './components/container/itemListContainer/ItemListContainer.jsx';
 import NavBar from "./components/navbar/NavBar";
 import {CartContextProvider} from './context/CartContext';
