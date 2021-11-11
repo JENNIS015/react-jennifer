@@ -25,8 +25,9 @@ export default function Cart() {
         </tr>
 
         {cartList.map(prodCart => <CartItem key={prodCart.prod.id} productos={prodCart}/>)}
-      <button onClick= {() => deleteAll()}>Vaciar Carrito</button>
+      
       </table>
+      <button onClick= {() => deleteAll()}>Vaciar Carrito</button>
     </div></div>
   )
 }
