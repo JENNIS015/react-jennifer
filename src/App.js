@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import 'materialize-css/dist/css/materialize.min.css'
 import './css/style.css'
 import Homepage from './components/home/Homepage.jsx';
@@ -7,13 +7,13 @@ import ItemDetailContainer from "./components/container/itemDetailContainer/Item
 import {Cart} from './components/cart/cart.jsx';
 import {ItemListContainer} from './components/container/itemListContainer/ItemListContainer.jsx';
 import NavBar from "./components/navbar/NavBar";
-import CartContextProvider from './context/CartContext';
+import {CartContextProvider} from './context/CartContext';
 function App() {
   return (
     <div>
 
 <CartContextProvider>
-        <Router>
+        <BrowserRouter>
           <NavBar/>
 
           <Switch>
@@ -27,7 +27,7 @@ function App() {
             <Route exact path='/cart' component={Cart}/>
           </Switch>
 
-        </Router>
+        </BrowserRouter>
       </CartContextProvider>
     </div>
   )

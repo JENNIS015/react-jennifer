@@ -2,21 +2,21 @@ import React,{useState} from 'react';
 import ItemCount from './ItemCount';
 import './itemDetail-style.css'
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../../../../context/CartContext';
 
 export const ItemDetail = ({prod}) => {
 
-  
-  function currencyFormat(num) {
-    return '$' + num
-      .toFixed(2)
-      .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-  }
+const {cartList, mostrarListado, addItems}=  useCartContext()  
 
+ 
   const [inputType, setInputType] = useState('input')
   function onAdd (count) {
+
     setInputType('button')
-    console.log("Se agregó " + count + ' ' + prod.title)
+    addItems({prod,cantidad:count})
   }
+  console.log(cartList)
+
   return (
     <div className="col s12 m12 l12 flex" key={prod.id}>
       <div className="card">
@@ -28,7 +28,7 @@ export const ItemDetail = ({prod}) => {
           <div className="col s12 m5 l5 detalleProducto">
             <h5 className="producto">{prod.title}</h5>
             <span className="price">
-              {currencyFormat(prod.price)}</span>
+              {prod.price}</span>
              
             <div onClick={()=>onAdd}>
               {
