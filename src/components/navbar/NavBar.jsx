@@ -11,7 +11,7 @@ const NavBar = () => {
           <div className="row">
             <div className="col s12">
               <Link to ="/" className="brand-logo">
-                <span className="hide-on-small-only">Mi Negocio</span>
+                <span className="hide-on-small-only"><img src="https://img.icons8.com/fluency/48/000000/tesla-supercharger-pin.png"/></span>
               </Link>
        
 

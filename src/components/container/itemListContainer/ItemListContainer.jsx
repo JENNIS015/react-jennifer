@@ -1,35 +1,39 @@
+import { getFirestore } from '../../../services/getFirestore';
 import {useState, useEffect} from 'react/cjs/react.development';
 import {useParams} from 'react-router-dom';
-import {getProductos} from '../../data/Data';
 import ItemList from '../../itemList/ItemList';
 import '../itemListContainer/itemListContainer.css'
 
 export const ItemListContainer = () => {
 
-  const [product,
-    setProduct] = useState([])
-  const [loading,
-    setLoading] = useState(true)
+ // const [product,  setProduct] = useState({})
+  const [products,  setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const {id} = useParams()
 
-  useEffect(() => {
+   useEffect(() => {
+    const db =getFirestore()
+ if (id){
+  const dbQueryCategoria= db.collection('items').where('categoria','==',id).get()
+  dbQueryCategoria.then (resp=> setProducts(resp.docs.map(prod =>({id:prod.id, ...prod.data()}) )))
+  .catch(err => console.log(err))
+  .finally(() => setLoading(false))
+} else {
+  const dbQuery= db.collection('items').get()
+  dbQuery .then (resp=> setProducts(resp.docs.map(prod =>({id:prod.id, ...prod.data()}) )))
+  .catch(err => console.log(err))
+  .finally(() => setLoading(false))
+}
 
-    if (id) {
-      getProductos.then((res) => {
-        setProduct(res.filter(prod => prod.categoria === id))
-      })
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))
-    } else {
-      getProductos.then((res) => {
-        setProduct(res)
-      })
-        .catch(err => console.log(err))
-        . finally(() => setLoading(false))
-    }
+},[id])
+// const dbQuery= db.collection('items').doc('2O2qy3onPC5IC8orDfwC').get()
+// dbQuery
+// .then(resp => setProduct({id:resp.id, ...resp.data()}))
 
-  }, [id])
+//   },[])
+   console.log(products)
+
 
   return (loading
     ? <div className="spinner">
@@ -39,7 +43,7 @@ export const ItemListContainer = () => {
   </div>
     : <div className="container">
       <div className="row">
-        <ItemList prod={product}/>
+        <ItemList prod={products}/>
 
       </div>
     </div>)

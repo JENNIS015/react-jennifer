@@ -23,7 +23,7 @@ useEffect(() => {
   console.log("ejecuta")
   setCantidades(cartList.reduce((prev, next) => prev + next.cantidad, 0))
 },[deleteItem])
-
+ 
   const addItems = (items) => {
     const checkNuevo = cartList.find(item => item.prod.id === items.prod.id);
   

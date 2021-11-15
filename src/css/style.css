@@ -136,3 +136,12 @@ a{
 span{
   color:#252525;
 }
+
+.mayuscula{
+ text-transform: uppercase;
+ font-size: 10px;
+}
+
+.card.hoverable:hover {
+  box-shadow: 2px 4px 5px 0 grey, 2px 5px 3px -3px grey, 2px 5px 10px 0 grey;
+}

@@ -10,14 +10,14 @@ export default function CartItem(prodCart) {
 
       <td>
         <img
-          src={prodCart.productos.prod.image}
+          src={prodCart.productos.prod.urlImagen}
           className="cart"
-          alt={prodCart.productos.prod.title}/>
+          alt={prodCart.productos.prod.nombre}/>
       </td>
 
       <td>
         <Link to={`/item/${prodCart.productos.prod.id}`}>
-          <p>{`${prodCart.productos.prod.title}`}</p>
+          <p>{`${prodCart.productos.prod.nombre}`}</p>
         </Link>
       </td>
       <td>

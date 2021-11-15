@@ -9,21 +9,19 @@ export default function Item({prod}) {
   return (
     <Link to={`/item/${prod.id}`}>
       <div className="col s12 m6 l4" key={prod.id}>
-        <div className="card">
+        <div className="card hoverable">
        
           <div className="card-image waves-effect waves-block waves-light">
-            <img src={prod.image} alt={prod.title}/>
+            <img src={prod.urlImagen} alt={prod.nombre}/>
           </div>
 
           <div className="card-content">
-            <span>{`${prod.title} - ${prod.categoria}`}</span>
+            <span>{`${prod.nombre.slice(0,30) + '...'}`}</span>
+            <p className="mayuscula">{`${prod.categoria}`}</p>
             <p>
               {formatNumber(prod.price)}</p>
           </div>
 
-          <div>
-              <button className="detalle">Detalle</button>
-          </div>
       
         </div>
       </div>

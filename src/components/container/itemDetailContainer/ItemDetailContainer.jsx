@@ -1,10 +1,8 @@
 import React from 'react'
+import { getFirestore } from '../../../services/getFirestore';
 import {useState, useEffect} from 'react/cjs/react.development';
 import { useParams } from 'react-router-dom';
 import {ItemDetail} from './itemDetail/ItemDetail';
-import { getProductos } from '../../data/Data';
-
-
 
 export default function ItemDetailContainer() {
 
@@ -12,23 +10,43 @@ export default function ItemDetailContainer() {
   const [loading,setLoading] = useState(true)
   const {id} = useParams()
 
-  useEffect(() => {
+useEffect(() => {
+  const db =getFirestore()
+  if(id){
+    const dbQueryIndividual= db.collection('items').doc(id).get()
+    dbQueryIndividual.then((res) => {
+      setProdIndiv({id:res.id, ...res.data()})
+    })
+    .catch(err => console.log(err))
+    .finally(() => setLoading(false))
+  } else{
+    const dbQuery= db.collection('items').get().then((res) => {
+    dbQuery.setProdIndiv(res.data()) })
+   .catch(err => console.log(err))
+   .finally(() => setLoading(false))
 
-    if(id){
-      getProductos.then((res) => {
-        setProdIndiv(res.find(prod => prod.id === parseInt(id)))
-      })
+  }
+  
+}, [id])
+
+
+  // useEffect(() => {
+
+  //   if(id){
+  //     getProductos.then((res) => {
+  //       setProdIndiv(res.find(prod => prod.id === parseInt(id)))
+  //     })
       
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))}
-    else 
-    {
-      getProductos.then((res) => {
-        setProdIndiv(res) })
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))
-    }
-  }, [id])
+  //       .catch(err => console.log(err))
+  //       .finally(() => setLoading(false))}
+  //   else 
+  //   {
+  //     getProductos.then((res) => {
+  //       setProdIndiv(res) })
+  //       .catch(err => console.log(err))
+  //       .finally(() => setLoading(false))
+  //   }
+  // }, [id])
 
 
 
