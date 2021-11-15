@@ -6,17 +6,15 @@ import { useCartContext } from '../../../../context/CartContext';
 
 export const ItemDetail = ({prod}) => {
 
-const {cartList, mostrarListado, addItems}=  useCartContext()  
+const {cartList, addItems, formatNumber}=  useCartContext()  
 
- 
   const [inputType, setInputType] = useState('input')
-  function onAdd (count) {
-
+  const onAdd = (count) =>{
     setInputType('button')
-    addItems({prod,cantidad:count})
+    addItems({prod,cantidad:count})        
   }
-  console.log(cartList)
-
+  
+  
   return (
     <div className="col s12 m12 l12 flex" key={prod.id}>
       <div className="card">
@@ -28,17 +26,15 @@ const {cartList, mostrarListado, addItems}=  useCartContext()
           <div className="col s12 m5 l5 detalleProducto">
             <h5 className="producto">{prod.title}</h5>
             <span className="price">
-              {prod.price}</span>
+            {formatNumber (prod.price)}</span>
              
-            <div onClick={()=>onAdd}>
-              {
+             {
                 inputType === 'input'?
                 <ItemCount stock={prod.stock} initial="1" onAdd={onAdd}/>
                 :
                 <Link to="/cart" className="pretext comprar">Ir a Carrito</Link>  
               }
             
-            </div>
             
           </div>
         </div>

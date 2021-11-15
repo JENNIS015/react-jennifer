@@ -1,26 +1,40 @@
 import React from 'react'
-
+import {useCartContext} from '../../context/CartContext'
+import {Link} from 'react-router-dom'
 export default function CartItem(prodCart) {
-  console.log(prodCart)
-
+  
+  const {formatNumber, deleteItem} = useCartContext()
   return (
 
     <tr>
 
       <td>
-        <img src={prodCart.productos.prod.image} alt={prodCart.productos.prod.title}/>
+        <img
+          src={prodCart.productos.prod.image}
+          className="cart"
+          alt={prodCart.productos.prod.title}/>
       </td>
 
       <td>
-        <span>{`${prodCart.productos.prod.title}`}</span>
+        <Link to={`/item/${prodCart.productos.prod.id}`}>
+          <p>{`${prodCart.productos.prod.title}`}</p>
+        </Link>
       </td>
       <td>
         <p>
-          {prodCart.productos.prod.price}</p>
+          {formatNumber(prodCart.productos.prod.price)}</p>
       </td>
       <td>
-        <p>x
-          {prodCart.productos.cantidad}</p>
+        <p>x {prodCart.productos.cantidad}</p>
+      </td>
+      <td>
+        <p>
+          {formatNumber(prodCart.productos.cantidad * prodCart.productos.prod.price)}</p>
+      </td>
+      <td>
+        <button onClick={() => deleteItem(prodCart.productos.prod.id)}>
+          <i className="tiny material-icons">delete</i>
+        </button>
       </td>
     </tr>
 

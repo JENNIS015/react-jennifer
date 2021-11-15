@@ -1,8 +1,13 @@
-import React from 'react'
+import {memo} from 'react'
 import Item from '../item/Item'
 
-export default function ItemList({prod}) {
+
+const ItemList = memo(
+    ({prod}) =>{
+       
     return (
         prod.map(prodIndividual=> <Item key={prodIndividual.id} prod={prodIndividual} /> ) 
     )
-}
+})
+
+export default ItemList

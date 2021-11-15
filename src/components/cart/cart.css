@@ -1,0 +1,39 @@
+.total{
+text-align: right;
+}
+
+
+th, td {
+
+    word-wrap: break-word;
+  }
+  
+  table{
+    table-layout: fixed;
+
+    width: 100%;
+    background-color: white;
+    margin-top:50px;
+    padding:20px
+  }
+  
+  .cart{
+    width: 80px;
+  }
+
+  .widgetCantidad{
+    background-color: red;
+    color: white;
+    border-radius: 30px;
+    padding: 2px 5px;
+    font-size:18px;
+ 
+  }
+
+  .iconCantidad{
+    display: -webkit-inline-box;
+  }
+
+  .ocultar{
+display: none;
+  }

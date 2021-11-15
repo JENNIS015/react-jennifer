@@ -20,7 +20,7 @@ export const ItemListContainer = () => {
         setProduct(res.filter(prod => prod.categoria === id))
       })
         .catch(err => console.log(err))
-        . finally(() => setLoading(false))
+        .finally(() => setLoading(false))
     } else {
       getProductos.then((res) => {
         setProduct(res)
@@ -32,7 +32,11 @@ export const ItemListContainer = () => {
   }, [id])
 
   return (loading
-    ? <h2>Cargando..</h2>
+    ? <div className="spinner">
+    <div className="bounce1"></div>
+    <div className="bounce2"></div>
+    <div className="bounce3"></div>
+  </div>
     : <div className="container">
       <div className="row">
         <ItemList prod={product}/>
