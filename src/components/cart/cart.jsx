@@ -7,7 +7,7 @@ import './cart.css'
 export default function Cart() {
 
   const {cartList, deleteAll, formatNumber} = useCartContext()
-
+ 
   var condition = !cartList?.length
 
   if (condition !== true) {
@@ -21,7 +21,8 @@ export default function Cart() {
             {cartList.map(prodCart => <CartItem key={prodCart.prod.id} productos={prodCart}/>)}
             </tbody>
             </table>
-              <h5 className="total">Total:{formatNumber(cartList.reduce((prev, next) => prev + next.prod.price, 0))}
+       
+              <h5 className="total">Total:{formatNumber(cartList.reduce((prev, next) => prev + (next.cantidad*next.prod.price), 0))}
               </h5>
               <button onClick= {() => deleteAll()}>Vaciar Carrito</button>
             </div>

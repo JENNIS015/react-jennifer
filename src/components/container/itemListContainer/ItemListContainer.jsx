@@ -27,11 +27,7 @@ export const ItemListContainer = () => {
 }
 
 },[id])
-// const dbQuery= db.collection('items').doc('2O2qy3onPC5IC8orDfwC').get()
-// dbQuery
-// .then(resp => setProduct({id:resp.id, ...resp.data()}))
 
-//   },[])
    console.log(products)
 
 

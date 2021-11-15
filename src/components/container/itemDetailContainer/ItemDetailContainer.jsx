@@ -30,26 +30,6 @@ useEffect(() => {
 }, [id])
 
 
-  // useEffect(() => {
-
-  //   if(id){
-  //     getProductos.then((res) => {
-  //       setProdIndiv(res.find(prod => prod.id === parseInt(id)))
-  //     })
-      
-  //       .catch(err => console.log(err))
-  //       .finally(() => setLoading(false))}
-  //   else 
-  //   {
-  //     getProductos.then((res) => {
-  //       setProdIndiv(res) })
-  //       .catch(err => console.log(err))
-  //       .finally(() => setLoading(false))
-  //   }
-  // }, [id])
-
-
-
   return (loading
     ? 
     <div className="spinner">
