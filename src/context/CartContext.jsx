@@ -19,6 +19,7 @@ export const CartContextProvider = ({children}) => {
     setCartList([])
   }
   
+
 useEffect(() => {
   console.log("ejecuta")
   setCantidades(cartList.reduce((prev, next) => prev + next.cantidad, 0))
@@ -53,7 +54,10 @@ useEffect(() => {
       </span>
     );
   }
-
+const precioTotal = ()=>{
+ return( cartList.reduce((prev, next) => prev + (next.cantidad * next.prod.price), 0)
+ )
+  }
   return (
     <CartContext.Provider
       value={{
@@ -62,7 +66,8 @@ useEffect(() => {
       addItems,
       deleteItem,
       deleteAll,
-      formatNumber
+      formatNumber,
+      precioTotal
     }}>
       {children}
     </CartContext.Provider>
