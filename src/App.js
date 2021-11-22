@@ -8,7 +8,7 @@ import Cart from './components/cart/Cart.jsx';
 import {ItemListContainer} from './components/container/itemListContainer/ItemListContainer.jsx';
 import NavBar from "./components/navbar/NavBar";
 import {CartContextProvider} from './context/CartContext';
-import OrderSucess from "./components/success/OrderSucess";
+ 
 function App() {
   return (
     <div>
@@ -22,11 +22,11 @@ function App() {
               <Homepage/>
               <ItemListContainer/>
             </Route>
-
+            <Route exact path='/productos' component={ItemListContainer}/>
             <Route exact path='/categoria/:id' component={ItemListContainer}/>
             <Route exact path='/item/:id' component={ItemDetailContainer}/>
             <Route exact path='/cart' component={Cart}/>
-            <Route exact path='/success' component={OrderSucess}/>
+             
           </Switch>
 
         </BrowserRouter>

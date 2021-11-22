@@ -12,6 +12,7 @@ export default function ItemDetailContainer() {
 
 useEffect(() => {
   const db =getFirestore()
+  console.log("detalle api")
   if(id){
     const dbQueryIndividual= db.collection('items').doc(id).get()
     dbQueryIndividual.then((res) => {

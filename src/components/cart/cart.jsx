@@ -4,7 +4,6 @@ import CartItem from "./CartItem";
 import { Link } from "react-router-dom";
 import "./cart.css";
 import "firebase/firestore";
-import { useState } from "react";
 import FormOrder from "./FormOrder";
 
 

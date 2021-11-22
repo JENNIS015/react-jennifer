@@ -16,30 +16,27 @@ export const CartContextProvider = ({ children }) => {
   });
 
   const deleteItem = (itemId) => {
-    const itemParaBorrar = cartList.filter((item) => item.prod.id !== itemId);
-    setCartList(itemParaBorrar);
+    setCartList (cartList.filter((item) => item.prod.id !== itemId))
   };
 
   const deleteAll = () => {
     setCartList([]);
   };
-
-  useEffect(() => {
-    console.log("ejecuta");
-    setCantidades(cartList.reduce((prev, next) => prev + next.cantidad, 0));
-  }, [deleteItem]);
-
   const addItems = (items) => {
-    const checkNuevo = cartList.find((item) => item.prod.id === items.prod.id);
-
-    if (checkNuevo) {
-      checkNuevo.cantidad = checkNuevo.cantidad + items.cantidad;
+  
+    const checkExist = cartList.find((item) => item.prod.id === items.prod.id);
+    if (checkExist) {
+      checkExist.cantidad = checkExist.cantidad + items.cantidad;
       setCartList(cartList);
+      setCantidades(cartList.reduce((prev, next) => prev + next.cantidad, 0));
     } else {
       setCartList([...cartList, items]);
-    }
-    setCantidades(cartList.reduce((prev, next) => prev + next.cantidad, 0));
+    } return checkExist
   };
+
+  useEffect(() => {
+    setCantidades(cartList.reduce((prev, next) => prev + next.cantidad, 0));
+  }, [cartList.length])
 
   const formatNumber = (number) => {
     return (

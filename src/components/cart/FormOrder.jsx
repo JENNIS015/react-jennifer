@@ -22,7 +22,7 @@ export default function FormOrder() {
   });
 
   const [dataOrder, setOrderData] = useState("");
-  
+
   const generarOrden = (e) => {
     e.preventDefault();
     let orden = {};
@@ -33,10 +33,11 @@ export default function FormOrder() {
       const id = cartItem.prod.id;
       const nombre = cartItem.prod.nombre;
       const precio = cartItem.prod.price * cartItem.cantidad;
-      console.log(cartItem);
       return { id, nombre, precio };
-    });
-
+    }
+    ) 
+    
+ 
     dbQuery
       .collection("orders")
       .add(orden)
@@ -71,15 +72,18 @@ export default function FormOrder() {
         console.log("resultado batch:", res);
       });
     });
-  };
 
+
+    
+  };
+ 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-  };
 
+  };
   return (
     <div>
       <section>
@@ -88,8 +92,11 @@ export default function FormOrder() {
             <h1>¡Muchas gracias!</h1>
             <h4>Compra Finalizada</h4>
             <p>Tu código de compra es: {dataOrder}</p>
+            <p>Total:</p>
 
-            {/* Total:{(dbQuery.collection("orders").doc(dataOrder))} */}
+            {()=>this.generarOrden}
+
+            {/* Total:{(dbQuery.colletion("orders").doc(dataOrder))} */}
           </>
         )}
       </section>

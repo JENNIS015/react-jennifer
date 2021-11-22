@@ -1,39 +1,38 @@
-.total{
-text-align: right;
+.total {
+  text-align: right;
 }
 
+th,
+td {
+  word-wrap: break-word;
+}
 
-th, td {
+table {
+  table-layout: fixed;
 
-    word-wrap: break-word;
-  }
-  
-  table{
-    table-layout: fixed;
+  width: 100%;
+  background-color: white;
+  margin-top: 50px;
+  padding: 20px;
+}
 
-    width: 100%;
-    background-color: white;
-    margin-top:50px;
-    padding:20px
-  }
-  
-  .cart{
-    width: 80px;
-  }
+.cart {
+  width: 80px;
+}
 
-  .widgetCantidad{
-    background-color: red;
-    color: white;
-    border-radius: 30px;
-    padding: 2px 5px;
-    font-size:18px;
- 
-  }
+.widgetCantidad {
+  background-color: #c33808;
+  color: white;
+  font-weight: 600;
+  border-radius: 40px;
+  padding: 2px 7px;
+  font-size: 18px;
+}
 
-  .iconCantidad{
-    display: -webkit-inline-box;
-  }
+.iconCantidad {
+  display: -webkit-inline-box;
+}
 
-  .ocultar{
-display: none;
-  }
+.ocultar {
+  display: none;
+}
