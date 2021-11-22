@@ -90,13 +90,13 @@ export default function FormOrder() {
             <h4>Compra Finalizada</h4>
             <p>Tu código de compra es: {dataOrder}</p>
 
-            {/* Total:{(dbQuery.collection("orders").doc(dataOrder).get())} */}
+            {/* Total:{(dbQuery.collection("orders").doc(dataOrder))} */}
           </>
         )}
       </section>
 
       <form
-        style={{ display: showCart ? "block" : "none" }}
+        style={{ display: showCart &&  cartList?.length ? "block" : "none" }}
         onChange={handleChange}
         onSubmit={generarOrden}>
         <input
