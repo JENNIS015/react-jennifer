@@ -22,21 +22,21 @@ export const CartContextProvider = ({ children }) => {
   const deleteAll = () => {
     setCartList([]);
   };
+    
   const addItems = (items) => {
-  
     const checkExist = cartList.find((item) => item.prod.id === items.prod.id);
     if (checkExist) {
       checkExist.cantidad = checkExist.cantidad + items.cantidad;
       setCartList(cartList);
-      setCantidades(cartList.reduce((prev, next) => prev + next.cantidad, 0));
+      setCantidades(checkExist.cantidad);
     } else {
       setCartList([...cartList, items]);
-    } return checkExist
+    } 
   };
 
   useEffect(() => {
     setCantidades(cartList.reduce((prev, next) => prev + next.cantidad, 0));
-  }, [cartList.length])
+   }, [cartList.length])
 
   const formatNumber = (number) => {
     return (
