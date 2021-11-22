@@ -28,8 +28,6 @@ export const ItemListContainer = () => {
 
 },[id])
 
-   console.log(products)
-
 
   return (loading
     ? <div className="spinner">

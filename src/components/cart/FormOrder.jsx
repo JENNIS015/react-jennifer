@@ -5,7 +5,6 @@ import firebase from "firebase";
 import { useState } from "react";
 
 export default function FormOrder() {
-
   const {
     cartList,
     showCart,
@@ -23,7 +22,7 @@ export default function FormOrder() {
   });
 
   const [dataOrder, setOrderData] = useState("");
-
+  
   const generarOrden = (e) => {
     e.preventDefault();
     let orden = {};
@@ -96,7 +95,7 @@ export default function FormOrder() {
       </section>
 
       <form
-        style={{ display: showCart &&  cartList?.length ? "block" : "none" }}
+        style={{ display: showCart && cartList?.length ? "block" : "none" }}
         onChange={handleChange}
         onSubmit={generarOrden}>
         <input
