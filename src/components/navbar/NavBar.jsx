@@ -1,15 +1,12 @@
-import { options } from "numeral";
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { CartWidget } from "./CartWidget";
 import "./NavBar-style.css";
-import M from "materialize-css/dist/js/materialize.min.js";
 
-const NavBar = () => {
-  document.addEventListener("DOMContentLoaded", function () {
-    var elems = document.querySelectorAll(".sidenav");
-    var instances = M.Sidenav.init(elems, options);
-  });
+ const NavBar = () => {
+//   document.addEventListener("DOMContentLoaded", function () {
+//     var elems = document.querySelectorAll(".sidenav");
+//   });
 
   return (
     <>
@@ -17,7 +14,7 @@ const NavBar = () => {
         <div className='nav-wrapper container'>
           <Link to='/' className='brand-logo'>
             <span className='hide-on-small-only'>
-              <img src='https://img.icons8.com/fluency/48/000000/tesla-supercharger-pin.png' />
+              <img alt="logo" src='https://img.icons8.com/fluency/48/000000/tesla-supercharger-pin.png' />
             </span>
           </Link>
           <NavLink to='/cart' className='right'>

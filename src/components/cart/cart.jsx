@@ -6,7 +6,6 @@ import "./cart.css";
 import "firebase/firestore";
 import FormOrder from "./FormOrder";
 
-
 const Cart=() =>{
   const { cartList, showCart,deleteAll, formatNumber, precioTotal } = useCartContext();
  

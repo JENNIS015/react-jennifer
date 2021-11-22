@@ -9,7 +9,7 @@ export default function FormOrder() {
     cartList,
     showCart,
     deleteAll,
-    formatNumber,
+
     precioTotal,
     dbQuery,
     setShow,
@@ -34,10 +34,8 @@ export default function FormOrder() {
       const nombre = cartItem.prod.nombre;
       const precio = cartItem.prod.price * cartItem.cantidad;
       return { id, nombre, precio };
-    }
-    ) 
-    
- 
+    });
+
     dbQuery
       .collection("orders")
       .add(orden)
@@ -72,17 +70,13 @@ export default function FormOrder() {
         console.log("resultado batch:", res);
       });
     });
-
-
-    
   };
- 
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-
   };
   return (
     <div>
@@ -94,7 +88,7 @@ export default function FormOrder() {
             <p>Tu código de compra es: {dataOrder}</p>
             <p>Total:</p>
 
-            {()=>this.generarOrden}
+            {() => this.generarOrden}
 
             {/* Total:{(dbQuery.colletion("orders").doc(dataOrder))} */}
           </>

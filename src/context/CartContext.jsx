@@ -29,6 +29,7 @@ export const CartContextProvider = ({ children }) => {
       checkExist.cantidad = checkExist.cantidad + items.cantidad;
       setCartList(cartList);
       setCantidades(checkExist.cantidad);
+
     } else {
       setCartList([...cartList, items]);
     } 
@@ -36,7 +37,7 @@ export const CartContextProvider = ({ children }) => {
 
   useEffect(() => {
     setCantidades(cartList.reduce((prev, next) => prev + next.cantidad, 0));
-   }, [cartList.length])
+   }, [cartList])
 
   const formatNumber = (number) => {
     return (
