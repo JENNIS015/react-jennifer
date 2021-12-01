@@ -10,7 +10,7 @@ export const ItemDetail = ({ prod }) => {
 
   const onAdd = (count) => {
     setInputType("button");
-    addItems({ prod, cantidad: count });
+    addItems({...prod, cantidad: count });
   };
 
   return (
@@ -19,13 +19,13 @@ export const ItemDetail = ({ prod }) => {
         <div className='card-image waves-effect waves-block waves-light'>
           <div className='col s12 m6 l6'>
             <div>
-              <img alt={prod.nombre} src={prod.urlImagen} />
+              <img alt={prod.nombre} className="imgDetail" src={prod.urlImagen} />
             </div>
           </div>
           <div className='col s12 m5 l5 detalleProducto'>
             <h5 className='producto'>{prod.nombre}</h5>
             <span className='price'>{formatNumber(prod.price)}</span>
-            {prod.stock}
+       
             {inputType === "input" ? (
               <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
             ) : (

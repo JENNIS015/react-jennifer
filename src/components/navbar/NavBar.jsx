@@ -1,20 +1,28 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useEffect } from "react";
 import { CartWidget } from "./CartWidget";
 import "./NavBar-style.css";
+import M from "materialize-css/dist/js/materialize.min.js";
 
- const NavBar = () => {
-//   document.addEventListener("DOMContentLoaded", function () {
-//     var elems = document.querySelectorAll(".sidenav");
-//   });
-
+const NavBar = () => {
+  useEffect(() => {
+    var sidenav = document.querySelectorAll(".sidenav");
+    M.Sidenav.init(sidenav, {});
+    var elems = document.querySelectorAll(".collapsible");
+    M.Collapsible.init(elems, {});
+  }, []);
   return (
     <>
-      <nav className='nav-extended'>
+ 
+     <nav className='nav-extended'>
         <div className='nav-wrapper container'>
           <Link to='/' className='brand-logo'>
             <span className='hide-on-small-only'>
-              <img alt="logo" src='https://img.icons8.com/fluency/48/000000/tesla-supercharger-pin.png' />
+              <img
+                alt='logo'
+                src='https://img.icons8.com/fluency/48/000000/tesla-supercharger-pin.png'
+              />
             </span>
           </Link>
           <NavLink to='/cart' className='right'>
@@ -41,44 +49,71 @@ import "./NavBar-style.css";
         <div className='nav-content container hide-on-med-and-down '>
           <ul className='tabs tabs-transparent'>
             <li className='tab'>
-              <NavLink to='/categoria/electronica'>Electronica</NavLink>
+              <NavLink to='/categoria/televisores'>Televisores</NavLink>
             </li>
             <li className='tab'>
-              <NavLink to='/categoria/electrodomesticos'>
-                Electrodomesticos
-              </NavLink>
+              <NavLink to='/categoria/celulares'>Celulares</NavLink>
+            </li>
+            <li className='tab'>
+              <NavLink to='/categoria/tablet'>Tablet</NavLink>
+            </li>
+            <li className='tab'>
+              <NavLink to='/categoria/notebook'>Notebook</NavLink>
+            </li>
+            <li className='tab'>
+              <NavLink to='/productos'>Todos</NavLink>
             </li>
           </ul>
         </div>
       </nav>
 
-      <ul className='sidenav' id='mobile-demo'>
-        <li>
-          <NavLink exact to='/'>
-            Home
-          </NavLink>
+       <ul className='sidenav' id='mobile-demo'>
+        <li className='sidenav-header red lighten-2'>
+          <div className='row'>
+            <div className='col s4'>
+              <img
+                alt='logo'
+                src='https://img.icons8.com/fluency/48/000000/tesla-supercharger-pin.png'
+              /> 
+              <span className='white-text text-darken-2'>Bienvenido</span>
+            </div>
+          </div>
         </li>
+
         <li>
-          <NavLink exact to='/productos'>
-            Todos
-          </NavLink>
+          <NavLink exact to='/'> Home </NavLink>
         </li>
-        <li>
-        Categorias
-        <ul>
-          <li>
-            <NavLink to='/categoria/electrodomesticos'>
-              Electrodomesticos
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/categoria/electrodomesticos'>
-              Electrodomesticos
-            </NavLink>
-          </li>
-        </ul>
+        <li>          <NavLink exact to='/productos'>            Todos          </NavLink>
         </li>
-      </ul>
+        <li>          <ul className='collapsible lighten-2'>         
+           <li>
+
+              <ul className='collapsible-header m-10'>
+                Categorias
+                <i className='material-icons right black-text'>
+                  arrow_drop_down
+                </i>
+              </ul>
+
+              <ul className='collapsible-body'>
+                <li className='tab'>
+                  <NavLink to='/categoria/celulares'>Celulares</NavLink>
+                </li>
+                <li className='tab'>
+                  <NavLink to='/categoria/tablet'>Tablet</NavLink>
+                </li>
+                <li className='tab'>
+                  <NavLink to='/categoria/notebook'>Notebook</NavLink>
+                </li>
+                <li className='tab'>
+                  <NavLink to='/categoria/televisores'>Televisores</NavLink>
+                </li>
+              </ul>
+
+            </li>
+          </ul>
+        </li>
+      </ul>  
     </>
   );
 };

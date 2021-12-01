@@ -1,57 +1,51 @@
-import React from "react";
 import { useCartContext } from "../../context/CartContext";
 import "firebase/firestore";
-import firebase from "firebase";
-import { useState } from "react";
+import firebase from "firebase/app";
+import Form from "./Form";
+import { Redirect } from "react-router";
 
-export default function FormOrder() {
+const FormOrder=()=> {
   const {
+    formData,
     cartList,
-    showCart,
     deleteAll,
-
     precioTotal,
     dbQuery,
-    setShow,
+    setFormData,
+    setOrderData,
   } = useCartContext();
-
-  const [formData, setFormData] = useState({
-    nombre: "",
-    telefono: "",
-    email: "",
-  });
-
-  const [dataOrder, setOrderData] = useState("");
 
   const generarOrden = (e) => {
     e.preventDefault();
     let orden = {};
+
     orden.date = firebase.firestore.Timestamp.fromDate(new Date());
     orden.buyer = formData;
     orden.total = precioTotal();
     orden.items = cartList.map((cartItem) => {
-      const id = cartItem.prod.id;
-      const nombre = cartItem.prod.nombre;
-      const precio = cartItem.prod.price * cartItem.cantidad;
-      return { id, nombre, precio };
+      const id = cartItem.id;
+      const nombre = cartItem.nombre;
+      const cantidad = cartItem.cantidad;
+      const urlImagen = cartItem.urlImagen;
+      const price = cartItem.price 
+      const subtotal = cartItem.price * cartItem.cantidad;
+      return { id, nombre, price,subtotal, cantidad, urlImagen };
     });
 
     dbQuery
       .collection("orders")
       .add(orden)
-      .then((resp) => setOrderData(resp.id)) //Mostrar id al usuario
+      .then((res) => setOrderData({ id: res.id, ...res.data }))
       .catch((err) => console.log(err))
       .finally(
         () => setFormData({ nombre: "", telefono: "", email: "" }),
-        setShow(false),
-        deleteAll()
-      );
+        deleteAll());
 
     // en el listado de cart del cartContext
     const itemsToUpdate = dbQuery.collection("items").where(
       firebase.firestore.FieldPath.documentId(),
       "in",
-      cartList.map((i) => i.prod.id)
+      cartList.map((i) => i.id)
     );
 
     const batch = dbQuery.batch();
@@ -62,64 +56,28 @@ export default function FormOrder() {
         batch.update(docSnapshot.ref, {
           stock:
             docSnapshot.data().stock -
-            cartList.find((item) => item.prod.id === docSnapshot.id).cantidad,
+            cartList.find((item) => item.id === docSnapshot.id).cantidad,
         });
-      });
-
-      batch.commit().then((res) => {
-        console.log("resultado batch:", res);
       });
     });
   };
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
+
   return (
     <div>
-      <section>
-        {dataOrder !== "" && (
-          <>
-            <h1>¡Muchas gracias!</h1>
-            <h4>Compra Finalizada</h4>
-            <p>Tu código de compra es: {dataOrder}</p>
-            <p>Total:</p>
-
-            {() => this.generarOrden}
-
-            {/* Total:{(dbQuery.colletion("orders").doc(dataOrder))} */}
-          </>
-        )}
-      </section>
-
-      <form
-        style={{ display: showCart && cartList?.length ? "block" : "none" }}
-        onChange={handleChange}
-        onSubmit={generarOrden}>
-        <input
-          type='text'
-          name='nombre'
-          placeholder='Nombre'
-          defaultValue={formData.nombre}
-        />
-        <input
-          type='text'
-          name='telefono'
-          placeholder='Telefono'
-          defaultValue={formData.telefono}
-        />
-        <input
-          type='email'
-          name='email'
-          placeholder='Correo Electrónico'
-          defaultValue={formData.email}
-        />
-
-        <button>Enviar</button>
-      </form>
+      {cartList.length === 0  && formData.nombre !== "" ?(
+        <Redirect to={{ pathname: "/sucess" }} />
+      ) : cartList.length > 0 ? (
+        <Form cambio={handleChange} envio={generarOrden} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
+export default FormOrder

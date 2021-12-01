@@ -28,6 +28,11 @@
     background: #0652DD;
 }
 
+.imgDetail {
+    height: auto!important;
+    padding: 40px!important;
+}
+
 .addtocart {
     display: block;
     border: none;

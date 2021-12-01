@@ -62,23 +62,14 @@ h1 {
   max-width: 50px;
 }
 
-.card .card-image img {
-  margin: 10px;
-}
 
-.card .card-title {
-  font-size: 12px !important;
 
-}
 
 .agregarCarrito{
   margin-top:20px;
   
 }
 
-.currencyCategory{
-  background-color:red;
-}
 
 .intro-header {
   padding-bottom: 50px;
@@ -145,3 +136,4 @@ span{
 .card.hoverable:hover {
   box-shadow: 2px 4px 5px 0 grey, 2px 5px 3px -3px grey, 2px 5px 10px 0 grey;
 }
+

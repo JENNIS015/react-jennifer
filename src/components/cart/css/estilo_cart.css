@@ -19,7 +19,9 @@ table {
 .cart {
   width: 80px;
 }
-
+.strong{
+  font-weight: 600;
+}
 .widgetCantidad {
   background-color: #c33808;
   color: white;
@@ -35,4 +37,14 @@ table {
 
 .ocultar {
   display: none;
+}
+
+.formulario {
+ 
+  padding: 30px;
+
+}
+.btn, .btn-large, .btn-small {
+
+  background-color: #150c7b;
 }

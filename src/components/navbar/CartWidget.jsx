@@ -6,9 +6,10 @@ const {cantidadUnidades} = useCartContext()
 
 
   return (
-    <div className={cantidadUnidades >0 ? 'mostrar':'ocultar'}>
+    <div >
     <div className="iconCantidad">
-     <span className="widgetCantidad">{cantidadUnidades}</span> <i className="large material-icons">shopping_cart</i>
+      <div className={cantidadUnidades >0 ? 'mostrar':'ocultar'}>
+     <span className="widgetCantidad" >{cantidadUnidades}</span> </div> <i className="large material-icons">shopping_cart</i>
     </div>
     </div>
   )

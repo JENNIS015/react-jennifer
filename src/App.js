@@ -8,8 +8,12 @@ import Cart from './components/cart/Cart.jsx';
 import {ItemListContainer} from './components/container/itemListContainer/ItemListContainer.jsx';
 import NavBar from "./components/navbar/NavBar";
 import {CartContextProvider} from './context/CartContext';
- 
+import Sucess from "./components/cart/Sucess";
+//import SumarItems from './services/Data'
+
 function App() {
+
+//SumarItems()
   return (
     <div>
 
@@ -23,10 +27,10 @@ function App() {
               <ItemListContainer/>
             </Route>
             <Route exact path='/productos' component={ItemListContainer}/>
-            <Route exact path='/categoria/:id' component={ItemListContainer}/>
+            <Route exact path='/categoria/:id' component={ItemListContainer} title='id'/>
             <Route exact path='/item/:id' component={ItemDetailContainer}/>
             <Route exact path='/cart' component={Cart}/>
-             
+            <Route exact path='/sucess' component={Sucess}/>
           </Switch>
 
         </BrowserRouter>

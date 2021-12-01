@@ -1,0 +1,21 @@
+
+#root > div > div > div:nth-child(2) > table > tbody > tr > td.borrar {
+  display: none;
+}
+
+.orden {
+  font-size: 20px;
+  font-weight: 600;
+  color: #150c7b;
+}
+.totalSucess {
+  font-weight: 700;
+  font-size: large;
+}
+
+.row .col.s6 {
+  padding: 5%;
+}
+h2{
+  font-size: 35px;
+}
