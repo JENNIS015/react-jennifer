@@ -1,8 +1,10 @@
 
-#root > div > div > div:nth-child(2) > table > tbody > tr > td.borrar {
+#root > div > div > div > div:nth-child(2) > table > tbody > tr > td.borrar {
   display: none;
 }
-
+.pa-30{
+  padding:30px
+}
 .orden {
   font-size: 20px;
   font-weight: 600;

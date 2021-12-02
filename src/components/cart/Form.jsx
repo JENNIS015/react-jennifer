@@ -3,10 +3,9 @@ import { useCartContext } from "../../context/CartContext";
 
 const Form = ({ cambio, envio }) => {
   const { formData } = useCartContext();
+ 
 
-  return (
- 
- 
+  return ( 
     <form  className='formulario' onChange={cambio} onSubmit={envio}>
     <h4>Tus Datos</h4>
 
@@ -70,7 +69,11 @@ const Form = ({ cambio, envio }) => {
           </label>
         </div>
       </div> 
-      <button  className='btn waves-effect waves-light'>
+
+
+      <button  className='btn waves-effect waves-light' disabled={
+        formData.nombre === "" || formData.telefono === "" || formData.email!==formData.email_validate ? true : false
+    }>
         Generar orden <i className='material-icons right'>send</i>
       </button>
     </form>

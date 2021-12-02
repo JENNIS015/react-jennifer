@@ -20,13 +20,13 @@ const Sucess = () => {
       .get()
       .then((snapshot) => guardarDetalle(snapshot.data()))
       .catch((err) => console.log(err));
-  }, [dataOrder, dbQuery]);
+  }, [dataOrder, dbQuery]); 
 
   return (
     <div className='row'>
       {detalleOrden ? (
-        <>
-          <div className='col s6'>
+        <div className="container">
+          <div className='col s12 m5 pa-30'>
             <h3 className='orden'>Orden: #{dataOrder.id}</h3>
             <hr />
             <h2>¡Muchas gracias {formData.nombre}!</h2>
@@ -38,7 +38,7 @@ const Sucess = () => {
             <br />
             <p className='totalSucess'>Total: {formatNumber(detalleOrden.total)}</p>
           </div>
-          <div className='col s6'>
+          <div className='col s12 m7'>
             <h4>Detalle de orden</h4>
             <table className="sucess">
               <tbody>
@@ -48,7 +48,7 @@ const Sucess = () => {
               </tbody>
             </table>
           </div>
-        </>
+        </div>
       ) : (
         <Loading />
       )}
