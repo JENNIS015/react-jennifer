@@ -1,44 +1,41 @@
-import { getFirestore } from "../../services/getFirestore";
-import { useEffect, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 import NavBarBrowser from "./NavBarBrowser";
 import NavBarMobile from "./NavBarMobile";
+import { NavLink } from "react-router-dom";
+import CartWidget from "./CartWidget";
 import "./css/navBar.css";
 
 const NavBar = () => {
-
-  const [categorias, setCategorias] = useState([]);
-
-  useEffect(() => {
-    let m;
-    let isMountedMenu = true;
-    getFirestore()
-      .collection("items")
-      .get()
-      .then((resp) => {
-        if (isMountedMenu) {
-          m = resp.docs.map((prod) => prod.data().categoria);
-        }
-      })
-      .catch((err) => console.log(err))
-      .finally(() => 
-      setCategorias(m.filter((x, y) => m.indexOf(x) === y)))
-    return () => {
-      isMountedMenu = false;
-      console.log("Loading menu");
-    };
-  }, []);
- 
+  const categorias = ["notebook", "celulares", "televisores", "tablet"];
 
   return (
-    <>
-      <BrowserView>
-         <NavBarBrowser categorias={categorias}/>
-      </BrowserView>
-      <MobileView>
-          <NavBarMobile categorias={categorias}/>  
-      </MobileView>
-    </>
+    <nav className='nav-extended'>
+      <div className='nav-wrapper container'>
+        <NavLink to='/' className='brand-logo'>
+          <span className='hide-on-small-only'>
+            <img
+              alt='logo'
+              src='https://img.icons8.com/fluency/48/000000/tesla-supercharger-pin.png'
+            />
+          </span>
+        </NavLink>
+
+        <NavLink to='#' data-target='mobile-demo' className='sidenav-trigger'>
+          <i className='material-icons'>menu</i>
+        </NavLink>
+
+        <NavLink to='/cart' className='right'>
+          <CartWidget />
+        </NavLink>
+
+        <BrowserView>
+          <NavBarBrowser categorias={categorias} />
+        </BrowserView>
+        <MobileView>
+          <NavBarMobile categorias={categorias} />
+        </MobileView>
+      </div>
+    </nav>
   );
 };
 export default NavBar;

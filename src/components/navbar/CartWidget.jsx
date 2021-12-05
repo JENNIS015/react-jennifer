@@ -2,14 +2,14 @@ import React from "react";
 import { useCartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
-  const { cantidadUnidades } = useCartContext();
+  const { itemsCart } = useCartContext();
 
   return (
     <div>
       <div className='iconCantidad'>
-        <div className={cantidadUnidades > 0 ? "mostrar" : "ocultar"}>
-          <span className='widgetCantidad'>{cantidadUnidades}</span>{" "}
-        </div>{" "}
+        <div className={itemsCart()> 0 ? "mostrar" : "ocultar"}>
+          <span className='widgetCantidad'>{itemsCart()}</span>
+        </div>
         <i className='large material-icons'>shopping_cart</i>
       </div>
     </div>

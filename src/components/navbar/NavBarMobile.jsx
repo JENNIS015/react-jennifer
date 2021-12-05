@@ -4,12 +4,11 @@ import M from "materialize-css/dist/js/materialize.min.js";
 import { useEffect } from "react";
 
 const NavBarMobile = ({ categorias }) => {
-
   useEffect(() => {
     var sidenav = document.querySelectorAll(".sidenav");
     M.Sidenav.init(sidenav, {});
   }, []);
-  console.log("mobile")
+
   return (
     <ul className='sidenav' id='mobile-demo'>
       <li className='sidenav-header red lighten-2'>
@@ -23,7 +22,6 @@ const NavBarMobile = ({ categorias }) => {
           </div>
         </div>
       </li>
-
       <li>
         <NavLink exact to='/'>
           Home
@@ -33,13 +31,11 @@ const NavBarMobile = ({ categorias }) => {
         <NavLink exact to='/productos'>
           Todos
         </NavLink>
-        </li>
-      
-   
-        {categorias.map((catMenu) => (
-          <OpcionesMenu key={catMenu} nombre={catMenu} />
-        ))}
-    
+      </li>
+      {categorias.map((catMenu) => (
+        <OpcionesMenu key={catMenu} nombre={catMenu} />
+      ))}
+      )
     </ul>
   );
 };
