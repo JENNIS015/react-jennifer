@@ -14,13 +14,14 @@ export const ItemListContainer = () => {
  
   useEffect(() => {
     let isMounted = true; 
-    var query = getFirestore().collection("items");
-
+    var query = getFirestore().collection("items")
     if (id) {
       query = query.where("categoria", "==", id);
+   
     } else if (location.pathname === "/") {
       query = query.where("ofertaEspecial", "==", true);
     }
+
     query
       .get()
       .then((resp) =>{if(isMounted) 
@@ -28,7 +29,7 @@ export const ItemListContainer = () => {
       })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-      console.log("Loading snapShots on firebase1");
+    
       return () => { isMounted = false };  
   }, [id,location]);
 
