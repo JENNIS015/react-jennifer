@@ -74,7 +74,7 @@ const Form = ({ cambio, envio }) => {
       <button  className='btn waves-effect waves-light' disabled={
         formData.nombre === "" || formData.telefono === "" || formData.email!==formData.email_validate ? true : false
     }>
-        Generar orden <i className='material-icons right'>send</i>
+        Confirmar <i className='material-icons right'>send</i>
       </button>
     </form>
 

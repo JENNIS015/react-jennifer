@@ -37,5 +37,9 @@
   letter-spacing: -0.35px;
   padding: 0px;
   margin-bottom: 0px;
+text-align: center;
+}
 
+.resultadosCantidad{
+  text-align: center;
 }

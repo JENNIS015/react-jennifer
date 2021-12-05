@@ -13,10 +13,7 @@ const NavBar = () => {
       <div className='nav-wrapper container'>
         <NavLink to='/' className='brand-logo'>
           <span className='hide-on-small-only'>
-            <img
-              alt='logo'
-              src='https://img.icons8.com/fluency/48/000000/tesla-supercharger-pin.png'
-            />
+          <span className="led"> MARKET BA</span>
           </span>
         </NavLink>
 

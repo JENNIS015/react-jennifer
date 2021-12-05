@@ -33,7 +33,7 @@ const Cart = () => {
               <div className="container full">
                 <h3>Tu carrito está vacío</h3>
                 <h5>¿No sabés qué comprar? ¡Miles de productos te esperan !</h5>
-                <Link to={`/`} className='waves-effect waves-light btn'>
+                <Link to={`/productos`} className='waves-effect waves-light btn'>
                   Ir a Productos
                 </Link>
               </div>
