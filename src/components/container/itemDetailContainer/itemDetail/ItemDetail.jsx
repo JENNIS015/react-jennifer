@@ -31,7 +31,7 @@ export const ItemDetail = ({ prod }) => {
           <div className='col s12 m5 l5 detalleProducto'>
             <h5 className='producto'>{prod.nombre}</h5>
             <span className='price'>{formatNumber(prod.price)}</span>
-
+            
             {inputType === "input" ? (
               <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
             ) : (
@@ -39,6 +39,7 @@ export const ItemDetail = ({ prod }) => {
                 Ir a Carrito
               </Link>
             )}
+            <span className='stockDisponible'>Stock Disponible: {prod.stock}</span>
             <p className='error'>{message}</p>
           </div>
         </div>

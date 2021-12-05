@@ -97,3 +97,10 @@ font-weight: 600;
 .m-20{
     margin:20px;
 }
+
+.stockDisponible{
+    text-transform: uppercase;
+    font-size: 13px;
+    color:grey;
+    margin-top:30px;
+}

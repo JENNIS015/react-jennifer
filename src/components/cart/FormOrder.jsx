@@ -51,18 +51,18 @@ const FormOrder = () => {
     );
 
     const batch = dbQuery.batch();
-
     //por cada item restar del stock la cantidad del carrito
     itemsToUpdate.get().then((collection) => {
       collection.docs.forEach((docSnapshot) => {
         batch.update(docSnapshot.ref, {
-          stock:
-            docSnapshot.data().stock -
-            cartList.find((item) => item.id === docSnapshot.id).cantidad,
-        });
-      });
-    });
-  };
+          stock:docSnapshot.data().stock -
+            cartList.find((item) => item.id === docSnapshot.id).cantidad
+          })
+        
+        })
+        batch.commit().catch((err) => console.log(err))
+      })
+    }
 
   
   const handleChange = (e) => {
