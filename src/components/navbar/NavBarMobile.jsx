@@ -23,12 +23,12 @@ const NavBarMobile = ({ categorias }) => {
         </div>
       </li>
       <li>
-        <NavLink exact to='/'>
+        <NavLink className="mayuscula" exact to='/'>
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink exact to='/productos'>
+        <NavLink className="mayuscula" exact to='/productos'>
           Todos
         </NavLink>
       </li>

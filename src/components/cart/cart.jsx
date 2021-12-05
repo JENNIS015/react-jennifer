@@ -13,7 +13,7 @@ const Cart = () => {
     <div className='container'>
       <div className='col s12'>
         <div className='row'>
-          <div className='col m12 l8'>
+          <div className='col s12 l8'>
             {cartList.length ? (
               <>
                 <h1>Carrito</h1>

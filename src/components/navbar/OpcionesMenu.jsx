@@ -5,7 +5,9 @@ const OpcionesMenu = ({ nombre }) => {
 
   return (
 
-        <li className='tab'><NavLink key={nombre} to={pathnameCat + nombre}>{nombre}</NavLink></li>
+        <li className='tab'>
+          <NavLink key={nombre} to={pathnameCat + nombre} className="mayuscula">{nombre}</NavLink>
+          </li>
       )  
   
 };
