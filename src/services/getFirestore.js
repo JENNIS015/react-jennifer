@@ -1,13 +1,14 @@
 import firebase from "firebase/app"
 
+ 
 const firebaseConfig = {
-    apiKey: "AIzaSyA5d1EVYPjoNZ_Nt7pI1fNcBJcC5dap0pg",
-    authDomain: "react-proyecto-jennifer.firebaseapp.com",
-    projectId: "react-proyecto-jennifer",
-    storageBucket: "react-proyecto-jennifer.appspot.com",
-    messagingSenderId: "435806527897",
-    appId: "1:435806527897:web:107a79dc1841febd4ef308"
-  };
+  apiKey: "AIzaSyCVhTcQ9sFFeuKSLrJZiVSHL8fREIqs63U",
+  authDomain: "react-jennifer.firebaseapp.com",
+  projectId: "react-jennifer",
+  storageBucket: "react-jennifer.appspot.com",
+  messagingSenderId: "262726968128",
+  appId: "1:262726968128:web:cb5036082bafd8331190a5"
+};
 
   // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);

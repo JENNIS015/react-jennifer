@@ -4,7 +4,6 @@ import { useState, useEffect } from "react/cjs/react.development";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "./itemDetail/ItemDetail";
 import Loading from "../../loading/Loading";
-import ErrorNoExiste from "../../errores/ErrorNoExiste";
 
 const ItemDetailContainer = () => {
   const [productIndiv, setProdIndiv] = useState({});
@@ -14,7 +13,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const db = getFirestore();
     const dbQuery = db.collection("items");
-    id ? (
+    if(id){
       dbQuery
         .doc(id)
         .get()
@@ -23,15 +22,13 @@ const ItemDetailContainer = () => {
         })
         .catch((err) => console.log(err))
         .finally(() => setLoading(false))
-    ) : (
-      <ErrorNoExiste />
-    );
+      }
   }, [id]);
 
   return loading ? (
     <Loading />
   ) : (
-    <div>
+    <div className="full">
       <div className='container'>
         <div className='row'>
           <ItemDetail prod={productIndiv} />

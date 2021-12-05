@@ -265,12 +265,11 @@ useEffect(() => {
     container.categoria=item.categoria
     container.descripcion=item.descripcion
     container.stock=item.stock
-    
- 
 
   dbQuery
   .collection("items").doc().set(container);
 })
-}, [])
+}, [dbQuery])
     console.log('items cargados')
   }
+  

@@ -17,10 +17,11 @@ const Cart = () => {
             {cartList.length ? (
               <>
                 <h1>Carrito</h1>
-                <table>
+                <table className="responsive-table">
                   <tbody>
                     {cartList.map((prodCart) => (
-                      <CartItem key={prodCart.id} prod={prodCart} />
+                      
+                      <CartItem  key={prodCart.id} prod={prodCart} />
                     ))}
                   </tbody>
                 </table>
@@ -29,7 +30,7 @@ const Cart = () => {
                 <button onClick={() => deleteAll()}>Vaciar Carrito</button>
               </>
             ) : (
-              <div>
+              <div className="container full">
                 <h3>Tu carrito está vacío</h3>
                 <h5>¿No sabés qué comprar? ¡Miles de productos te esperan !</h5>
                 <Link to={`/`} className='waves-effect waves-light btn'>
@@ -39,7 +40,6 @@ const Cart = () => {
             )}
           </div>
           <div className='col s12 m12 l4'>
-          
             <FormOrder />
           </div>
         </div>

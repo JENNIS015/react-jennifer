@@ -62,7 +62,9 @@ h1 {
   max-width: 50px;
 }
 
-
+.full{
+  height: 100vh;
+}
 
 
 .agregarCarrito{

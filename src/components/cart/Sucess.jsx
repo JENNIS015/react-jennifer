@@ -3,47 +3,51 @@ import { useEffect } from "react";
 import CartItem from "./CartItem";
 import Loading from "../loading/Loading";
 import "../cart/css/estilo_sucess.css";
+import { getFirestore } from "../../services/getFirestore";
 const Sucess = () => {
   const {
     dataOrder,
     detalleOrden,
-    formData,
-    dbQuery,
     guardarDetalle,
     formatNumber,
   } = useCartContext();
 
   useEffect(() => {
+    const dbQuery = getFirestore();
     dbQuery
       .collection("orders")
       .doc(dataOrder.id)
       .get()
-      .then((snapshot) => guardarDetalle(snapshot.data()))
+      .then((snapshot) =>guardarDetalle(snapshot.data())
+      )
       .catch((err) => console.log(err));
-  }, [dataOrder, dbQuery]); 
+  }, [dataOrder,guardarDetalle]); 
 
+ 
   return (
     <div className='row'>
       {detalleOrden ? (
         <div className="container">
-          <div className='col s12 m5 pa-30'>
+          <div className='col s12'>
             <h3 className='orden'>Orden: #{dataOrder.id}</h3>
             <hr />
-            <h2>¡Muchas gracias {formData.nombre}!</h2>
+            <h4>¡Muchas gracias {detalleOrden.buyer.nombre}!</h4>
             <h5>Datos de contacto</h5>
 
-            <p>{formData.email}</p>
-            <p>{formData.telefono}</p>
+            <p>{detalleOrden.buyer.email}</p>
+            <p>{detalleOrden.buyer.telefono}</p>
 
             <br />
             <p className='totalSucess'>Total: {formatNumber(detalleOrden.total)}</p>
           </div>
-          <div className='col s12 m7'>
+          <div className='col s12'>
             <h4>Detalle de orden</h4>
-            <table className="sucess">
+            <table className="sucess responsive-table">
               <tbody>
                 {detalleOrden.items.map((orden) => (
                   <CartItem key={orden.id} prod={orden}/>
+
+
                 ))}
               </tbody>
             </table>

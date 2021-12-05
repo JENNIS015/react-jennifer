@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
-import { getFirestore } from "../services/getFirestore";
+
 
 const CartContext = createContext();
 
@@ -8,7 +8,7 @@ export const useCartContext = () => useContext(CartContext);
 export const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
   const [cantidadUnidades, setCantidades] = useState([0]);
-
+  const [message, setMessage] = useState("");
   const deleteItem = (itemId) => {
     setCartList(cartList.filter((item) => item.id !== itemId));
   };
@@ -20,9 +20,20 @@ export const CartContextProvider = ({ children }) => {
   const addItems = (items) => {
     const checkExist = cartList.find((item) => item.id === items.id);
     if (checkExist) {
-      checkExist.cantidad = checkExist.cantidad + items.cantidad;
-      setCartList(cartList);
-      setCantidades(checkExist.cantidad);
+      let cantidadNueva = checkExist.cantidad + items.cantidad;
+
+      if (items.stock > cantidadNueva) {
+        setCantidades((checkExist.cantidad = cantidadNueva));
+        setCartList(cartList);
+      } else {
+        setMessage(
+          "No se ha podido agregar al carrito. Cantidades disponibles en stock: " +
+            items.stock
+        );
+        setTimeout(() => {
+          setMessage("");
+        }, 8000);
+      }
     } else {
       setCartList([...cartList, items]);
     }
@@ -49,7 +60,8 @@ export const CartContextProvider = ({ children }) => {
     );
   };
 
-  const dbQuery = getFirestore();
+  // const [inputType, setInputType] = useState("input");
+
   const [formData, setFormData] = useState({
     nombre: "",
     telefono: "",
@@ -63,10 +75,11 @@ export const CartContextProvider = ({ children }) => {
       value={{
         cartList,
         cantidadUnidades,
-        dbQuery,
         dataOrder,
         formData,
         detalleOrden,
+        message,
+        setMessage,
         guardarDetalle,
         setFormData,
         setOrderData,

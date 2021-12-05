@@ -4,7 +4,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
   const [count, setCount] = useState(initial);
 
   const aumentarContador = () => {
-    if (count < stock) {
+     if (count < stock) {
       setCount(count + 1);
     }
   };

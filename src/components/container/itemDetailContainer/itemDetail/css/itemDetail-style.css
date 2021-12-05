@@ -32,7 +32,10 @@
     height: auto!important;
     padding: 40px!important;
 }
-
+.error{
+color: rgba(255, 0, 0, 0.671);
+font-weight: 600; 
+}
 .addtocart {
     display: block;
     border: none;
