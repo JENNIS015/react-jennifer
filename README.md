@@ -1,6 +1,5 @@
-
-# MARKET BA
-##E-COMMMERCE de articulos electrónicos y electrodomesticos##
+##MARKET BA
+###E-COMMMERCE de articulos electrónicos y electrodomesticos
 Venta de articulos realizado para curso de React
 
 
@@ -13,4 +12,3 @@ React-router-dom para obtener un enrutamiento dinámico gracias a los componente
 
 ####Base de datos - Firebase 
 Se utilizó para guardar los productos y ordenes de pedido exitosas.
-````
