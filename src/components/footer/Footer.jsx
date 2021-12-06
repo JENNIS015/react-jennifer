@@ -12,6 +12,7 @@ export default function Footer() {
               proyecto como si fuera nuestro trabajo de tiempo completo.
             </p>
           </div>
+          
           <div className='col l6 s12'>
             <h5 className='white-text'>CONTACTO</h5>
             <p><i className="tiny material-icons">local_phone</i> 11-XXX-XXXX</p>

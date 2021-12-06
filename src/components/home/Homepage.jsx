@@ -21,7 +21,6 @@ const Homepage = () => {
 
 }, [])
    
-  
   return (
     <div>
       <div className='carousel carousel-slider'>
