@@ -1,36 +1,64 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
-import { getFirestore } from "../services/getFirestore";
+import React, { createContext, useState, useContext } from "react";
 
 const CartContext = createContext();
 
 export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
-  const [cartList, setCartList] = useState([]);
   const [cantidadUnidades, setCantidades] = useState([0]);
+  const [message, setMessage] = useState("");
+  const [cartList, setCartList] = useState(() => {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+  });
 
   const deleteItem = (itemId) => {
-    setCartList(cartList.filter((item) => item.id !== itemId));
+    let cartDelete = cartList.filter((item) => item.id !== itemId);
+
+    setCartList(cartDelete);
+
+    let cartString = JSON.stringify(cartDelete);
+    localStorage.setItem("cart", cartString);
   };
 
   const deleteAll = () => {
     setCartList([]);
+    localStorage.removeItem("cart");
   };
 
   const addItems = (items) => {
     const checkExist = cartList.find((item) => item.id === items.id);
+
     if (checkExist) {
-      checkExist.cantidad = checkExist.cantidad + items.cantidad;
-      setCartList(cartList);
-      setCantidades(checkExist.cantidad);
+      let cantidadNueva = checkExist.cantidad + items.cantidad;
+
+      if (items.stock > cantidadNueva) {
+        setCantidades((checkExist.cantidad = cantidadNueva));
+        setCartList(cartList);
+
+        let stringCart = JSON.stringify(cartList);
+        localStorage.setItem("cart", stringCart);
+        
+      } else {
+        setMessage(
+          "No se ha podido agregar al carrito. Cantidades disponibles en stock: " +
+            items.stock
+        );
+        setTimeout(() => {
+          setMessage("");
+        }, 8000);
+      }
     } else {
-      setCartList([...cartList, items]);
+      let newCart = [...cartList, items];
+      setCartList(newCart);
+
+      let stringCart = JSON.stringify(newCart);
+      localStorage.setItem("cart", stringCart);
     }
   };
 
-  useEffect(() => {
-    setCantidades(cartList.reduce((prev, next) => prev + next.cantidad, 0));
-  }, [cartList]);
+  const itemsCart = () => {
+    return cartList.reduce((prev, next) => prev + next.cantidad, 0);
+  };
 
   const formatNumber = (number) => {
     return (
@@ -49,7 +77,8 @@ export const CartContextProvider = ({ children }) => {
     );
   };
 
-  const dbQuery = getFirestore();
+  // const [inputType, setInputType] = useState("input");
+
   const [formData, setFormData] = useState({
     nombre: "",
     telefono: "",
@@ -63,10 +92,12 @@ export const CartContextProvider = ({ children }) => {
       value={{
         cartList,
         cantidadUnidades,
-        dbQuery,
         dataOrder,
         formData,
         detalleOrden,
+        message,
+        setMessage,
+        itemsCart,
         guardarDetalle,
         setFormData,
         setOrderData,

@@ -2,8 +2,9 @@ import React from "react";
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
-const CartItem = (prod, key)=> {
+const CartItem = (prod)=> {
   const { formatNumber, deleteItem } = useCartContext();
+
   const productos= prod.prod
   
   return (
@@ -17,7 +18,7 @@ const CartItem = (prod, key)=> {
       </td>
 
       <td>
-        <Link to={`/item/${key}`}>
+        <Link to={`/item/${productos.id}`}>
           <p>{`${productos.nombre}`}</p>
           <p>x {productos.cantidad}</p>
         </Link>
@@ -30,8 +31,8 @@ const CartItem = (prod, key)=> {
         <p className="strong">{formatNumber(productos.cantidad * productos.price)}</p>
       </td>
 
-      <td className="borrar">
-        <button onClick={() => deleteItem(key)}>
+    <td className="borrar">
+        <button onClick={() => deleteItem(productos.id)}>
           <i className='tiny material-icons'>delete</i>
         </button>
       </td>

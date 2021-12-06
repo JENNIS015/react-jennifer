@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 
-export default function Item({ prod }) {
+const Item = ({ prod }) => {
   const { formatNumber } = useCartContext();
 
   return (
@@ -23,4 +23,5 @@ export default function Item({ prod }) {
       </div>
     </Link>
   );
-}
+};
+export default Item;

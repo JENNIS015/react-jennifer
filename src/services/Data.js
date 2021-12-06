@@ -250,27 +250,26 @@ export const data = [
 ];
 
 
-export default function SumarItems (){
-  // Add a new document with a generated id
+// export default function SumarItems (){
+//   // Add a new document with a generated id
   
-    const dbQuery = getFirestore();
+//     const dbQuery = getFirestore();
 
  
-useEffect(() => {
-  data.map(item => {
-    const container = {};
-    container.nombre = item.nombre;
-    container.urlImagen= item.urlImagen;
-    container.price=item.price;
-    container.categoria=item.categoria
-    container.descripcion=item.descripcion
-    container.stock=item.stock
-    
- 
+// useEffect(() => {
+//   data.map(item => {
+//     const container = {};
+//     container.nombre = item.nombre;
+//     container.urlImagen= item.urlImagen;
+//     container.price=item.price;
+//     container.categoria=item.categoria
+//     container.descripcion=item.descripcion
+//     container.stock=item.stock
 
-  dbQuery
-  .collection("items").doc().set(container);
-})
-}, [])
-    console.log('items cargados')
-  }
+//   dbQuery
+//   .collection("items").doc().set(container);
+// })
+// }, [dbQuery])
+//     console.log('items cargados')
+//   }
+  
