@@ -34,6 +34,7 @@ export const CartContextProvider = ({ children }) => {
       if (items.stock > cantidadNueva) {
         setCantidades((checkExist.cantidad = cantidadNueva));
         setCartList(cartList);
+        
         let stringCart = JSON.stringify(cartList);
         localStorage.setItem("cart", stringCart);
       } else {
