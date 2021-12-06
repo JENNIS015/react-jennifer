@@ -13,4 +13,3 @@ React-router-dom para obtener un enrutamiento dinámico gracias a los componente
 
 ####Base de datos - Firebase 
 Se utilizó para guardar los productos y ordenes de pedido exitosas.
-````
