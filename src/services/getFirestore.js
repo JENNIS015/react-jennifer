@@ -1,6 +1,5 @@
 import firebase from "firebase/app"
 
- 
 const firebaseConfig = {
   apiKey: "AIzaSyCVhTcQ9sFFeuKSLrJZiVSHL8fREIqs63U",
   authDomain: "react-jennifer.firebaseapp.com",
