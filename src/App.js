@@ -18,7 +18,6 @@ function App() {
       <CartContextProvider>
         <BrowserRouter>
           <NavBar />
-
           <Switch>
             <Route exact path='/'>
               <Homepage />
