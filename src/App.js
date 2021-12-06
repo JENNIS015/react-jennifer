@@ -19,8 +19,13 @@ function App() {
         <BrowserRouter>
           <NavBar />
          
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 0a83d6846ada5f2e9ee7121a159ff9d570311fef
           <Switch>
+          <Homepage />
             <Route exact path='/'>
             <Homepage />
             <ItemListContainer />
