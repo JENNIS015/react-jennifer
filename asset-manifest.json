@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-jennifer/static/css/main.2796e0f6.chunk.css",
-    "main.js": "/react-jennifer/static/js/main.2df88b55.chunk.js",
-    "main.js.map": "/react-jennifer/static/js/main.2df88b55.chunk.js.map",
+    "main.js": "/react-jennifer/static/js/main.1c891d90.chunk.js",
+    "main.js.map": "/react-jennifer/static/js/main.1c891d90.chunk.js.map",
     "runtime-main.js": "/react-jennifer/static/js/runtime-main.54e99db9.js",
     "runtime-main.js.map": "/react-jennifer/static/js/runtime-main.54e99db9.js.map",
     "static/css/2.b0300f7a.chunk.css": "/react-jennifer/static/css/2.b0300f7a.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.b0300f7a.chunk.css",
     "static/js/2.c1c0bf0c.chunk.js",
     "static/css/main.2796e0f6.chunk.css",
-    "static/js/main.2df88b55.chunk.js"
+    "static/js/main.1c891d90.chunk.js"
   ]
 }
