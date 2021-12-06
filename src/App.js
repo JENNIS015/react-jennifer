@@ -18,11 +18,12 @@ function App() {
       <CartContextProvider>
         <BrowserRouter>
           <NavBar />
-          <Homepage />
+         
           
           <Switch>
             <Route exact path='/'>
-              <ItemListContainer />
+            <Homepage />
+            <ItemListContainer />
             </Route>
             <Route exact path='/productos' component={ItemListContainer} />
             <Route exact path='/categoria/:id' component={ItemListContainer} />
