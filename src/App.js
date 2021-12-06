@@ -18,9 +18,10 @@ function App() {
       <CartContextProvider>
         <BrowserRouter>
           <NavBar />
-          <Homepage />
-          
+         
+
           <Switch>
+          <Homepage />
             <Route exact path='/'>
               <ItemListContainer />
             </Route>
