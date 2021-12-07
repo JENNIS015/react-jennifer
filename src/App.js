@@ -8,7 +8,7 @@ import { CartContextProvider } from "./context/CartContext";
 import Sucess from "./components/cart/Sucess";
 import NavBar from "./components/navbar/NavBar";
 import Footer from "./components/footer/Footer";
-import "./css/style.css";
+//import "./css/style.css";
 import "materialize-css/dist/css/materialize.min.css";
 
 function App() {
