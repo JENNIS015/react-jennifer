@@ -14,10 +14,9 @@ import "materialize-css/dist/css/materialize.min.css";
 function App() {
   return (
     <div>
-      <CartContextProvider>
+      <CartContextProvider basename ={process.env.PUBLIC_URL}>
         <BrowserRouter  basename ={process.env.PUBLIC_URL}>
           <NavBar />
-
           <Switch>
             <Route  exact path= '/'>
               <Homepage />
