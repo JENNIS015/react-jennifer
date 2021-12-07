@@ -1,5 +1,5 @@
 import { getFirestore } from "../../../services/getFirestore";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react/cjs/react.development";
 import { useParams } from "react-router-dom";
 import ItemList from "../../itemList/ItemList";
 import "../itemListContainer/css/itemListContainer.css";
@@ -11,31 +11,27 @@ export const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const location = useLocation();
-
+ 
   useEffect(() => {
-    let isMounted = true;
-    var query = getFirestore().collection("items");
+    let isMounted = true; 
+    var query = getFirestore().collection("items")
     if (id) {
       query = query.where("categoria", "==", id);
+   
     } else if (location.pathname === "/") {
       query = query.where("ofertaEspecial", "==", true);
     }
 
     query
       .get()
-      .then((resp) => {
-        if (isMounted)
-          setProducts(
-            resp.docs.map((prod) => ({ id: prod.id, ...prod.data() }))
-          );
+      .then((resp) =>{if(isMounted) 
+        setProducts(resp.docs.map((prod) => ({ id: prod.id, ...prod.data() })));   
       })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-
-    return () => {
-      isMounted = false;
-    };
-  }, [id, location]);
+    
+      return () => { isMounted = false };  
+  }, [id,location]);
 
   return loading ? (
     <Loading />

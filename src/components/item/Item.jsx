@@ -10,7 +10,7 @@ const Item = ({ prod }) => {
       <div className='col s12 m6 l4' key={prod.id}>
         <div className='card hoverable'>
           <div className='card-image waves-effect waves-block waves-light'>
-            <img src={".."+ prod.urlImagen} alt={prod.nombre} />
+            <img src={prod.urlImagen} alt={prod.nombre} />
           </div>
 
           <div className='card-content'>

@@ -24,7 +24,7 @@ export const ItemDetail = ({ prod }) => {
               <img
                 alt={prod.nombre}
                 className='imgDetail'
-                src={".."+ prod.urlImagen}
+                src={prod.urlImagen}
               />
             </div>
           </div>

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 :root {
@@ -6,7 +7,6 @@
 }
 
 * {
-
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -140,19 +140,3 @@ span {
   max-height: 350px!important;
   vertical-align: middle;
 }
-
-@media  only screen and (max-width: 600px) {
-.carousel {
-  height: 150px;}  
-.container{
-  width: 90%!important;
-}
-.card .card-image img {
-  width: 70%!important;
-  height: 44vw!important;
-  object-fit: cover;
-  padding: 10px;
-  margin: auto;
-}
-}
-

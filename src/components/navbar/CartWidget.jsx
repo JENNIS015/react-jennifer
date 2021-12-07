@@ -7,7 +7,7 @@ const CartWidget = () => {
   return (
     <div>
       <div className='iconCantidad'>
-        <div className={itemsCart() > 0 ? "mostrar" : "ocultar"}>
+        <div className={itemsCart()> 0 ? "mostrar" : "ocultar"}>
           <span className='widgetCantidad'>{itemsCart()}</span>
         </div>
         <i className='large material-icons'>shopping_cart</i>
