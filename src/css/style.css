@@ -140,3 +140,19 @@ span {
   max-height: 350px!important;
   vertical-align: middle;
 }
+
+@media  only screen and (max-width: 600px) {
+.carousel {
+  height: 150px;}  
+.container{
+  width: 90%!important;
+}
+.card .card-image img {
+  width: 70%!important;
+  height: 44vw!important;
+  object-fit: cover;
+  padding: 10px;
+  margin: auto;
+}
+}
+
