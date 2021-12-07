@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <CartContextProvider>
-        <BrowserRouter basename="/">
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <NavBar />
 
           <Switch>
