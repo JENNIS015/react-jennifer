@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
 import OpcionesMenu from "./OpcionesMenu";
-// import M from "materialize-css/dist/js/materialize.min.js";
-// import { useEffect } from "react";
+import M from "materialize-css/dist/js/materialize.min.js";
+import { useEffect } from "react";
 
 const NavBarMobile = ({ categorias }) => {
-  // useEffect(() => {
-  //   var sidenav = document.querySelectorAll(".sidenav");
-  //   M.Sidenav.init(sidenav, {});
-  // }, []);
+  useEffect(() => {
+    var sidenav = document.querySelectorAll(".sidenav");
+    M.Sidenav.init(sidenav, {});
+  }, []);
 
   return (
     <ul className='sidenav' id='mobile-demo'>
