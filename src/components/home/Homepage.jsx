@@ -23,6 +23,7 @@ const Homepage = () => {
     <div>
       <div className='carousel carousel-slider'>
         <NavLink className='carousel-item' to='/productos'>
+        {console.log("paso1")}
           <img src='/assets/image/portada.jpg' alt="MarketBA" />
         </NavLink>
         <NavLink className='carousel-item' to='/productos'>

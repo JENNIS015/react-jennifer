@@ -17,14 +17,14 @@ function App() {
       <CartContextProvider>
         <BrowserRouter>
           <NavBar />
-          {console.log("paso1")}
+        
           <Switch>
-          {console.log("paso2")}
+          
             <Route exact path='/'>
               <Homepage />
-              {console.log("3")}
+            
               <ItemListContainer />
-              {console.log("4")}
+            
             </Route>
             <Route exact path='/productos' component={ItemListContainer} />
             <Route exact path='/categoria/:id' component={ItemListContainer} />

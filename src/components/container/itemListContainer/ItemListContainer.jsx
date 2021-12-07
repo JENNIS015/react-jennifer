@@ -7,6 +7,7 @@ import Loading from "../../loading/Loading";
 import { useLocation } from "react-router-dom";
 
 export const ItemListContainer = () => {
+  {console.log("paso2")}
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
@@ -21,7 +22,7 @@ export const ItemListContainer = () => {
     } else if (location.pathname === "/") {
       query = query.where("ofertaEspecial", "==", true);
     }
-
+    {console.log("paso3")}
     query
       .get()
       .then((resp) =>{if(isMounted) 
