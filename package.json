@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:staging": "https://jennis015.github.io/react-jennifer npm run build",
+    "build:staging": "https://jennis015.github.io/react-jennifer/ npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
