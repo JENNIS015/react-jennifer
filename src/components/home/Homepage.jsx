@@ -5,7 +5,7 @@ const Homepage = () => {
     <div>
       <div className='carousel carousel-slider'>
         <NavLink className='carousel-item' to='/productos'>
-          <img src='./assets/image/portada.jpg' alt='MarketBA' />
+          <img src='../assets/image/portada.jpg' alt='MarketBA' />
         </NavLink>
       
       </div>
