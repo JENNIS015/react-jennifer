@@ -1,6 +1,5 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 const Homepage = () => {
