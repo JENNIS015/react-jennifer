@@ -1,6 +1,6 @@
 import React from "react";
 import { getFirestore } from "../../../services/getFirestore";
-import { useState, useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "./itemDetail/ItemDetail";
 import Loading from "../../loading/Loading";
