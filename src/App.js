@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <CartContextProvider>
-        <BrowserRouter  basename ={process.env.PUBLIC_URL}>
+        <BrowserRouter basename ="/react-jennifer">
           <NavBar />
           <Switch>
             <Route exact path= '/'>
