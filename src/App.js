@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <CartContextProvider>
-        <BrowserRouter basename="https://jennis015.github.io/react-jennifer/">
+        <BrowserRouter basename="https://jennis015.github.io/react-jennifer">
           <NavBar />
 
           <Switch>
