@@ -2,7 +2,7 @@
   "name": "sanchez-jennifer",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://jennis015.github.io/react-jennifer/",
+
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -55,7 +55,7 @@
     "type": "git",
     "url": "git+https://github.com/JENNIS015/react-jennifer.git"
   },
-  "author": "",
+  "author": "Jennifer Sanchez",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JENNIS015/react-jennifer/issues"
