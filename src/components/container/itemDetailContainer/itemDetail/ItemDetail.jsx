@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../../../context/CartContext";
 import "./css/itemDetail-style.css";
 
+
 export const ItemDetail = ({ prod }) => {
   const {message, addItems, formatNumber } = useCartContext();
   const [inputType, setInputType] = useState("input");
@@ -14,7 +15,8 @@ export const ItemDetail = ({ prod }) => {
     setInputType("button");
 
   }
-  
+
+  const imgUrl = process.env.PUBLIC_URL + prod.urlImagen;
   return (
     <div className='col s12 m12 l12 flex' key={prod.id}>
       <div className='card'>
@@ -24,7 +26,7 @@ export const ItemDetail = ({ prod }) => {
               <img
                 alt={prod.nombre}
                 className='imgDetail'
-                src={prod.urlImagen}
+                src={imgUrl}
               />
             </div>
           </div>
