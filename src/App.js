@@ -14,11 +14,11 @@ import "materialize-css/dist/css/materialize.min.css";
 function App() {
   return (
     <div>
-      <CartContextProvider basename ={process.env.PUBLIC_URL}>
+      <CartContextProvider>
         <BrowserRouter  basename ={process.env.PUBLIC_URL}>
           <NavBar />
           <Switch>
-            <Route  exact path= '/'>
+            <Route exact path= '/'>
               <Homepage />
               <ItemListContainer />
             </Route>
