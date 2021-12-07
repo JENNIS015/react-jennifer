@@ -15,10 +15,10 @@ function App() {
   return (
     <div>
       <CartContextProvider>
-        <BrowserRouter basename ="/react-jennifer">
+        <BrowserRouter basename='/react-jennifer'>
           <NavBar />
           <Switch>
-            <Route exact path= '/'>
+            <Route exact path='/'>
               <Homepage />
               <ItemListContainer />
             </Route>
