@@ -4,7 +4,7 @@ import { useCartContext } from "../../context/CartContext";
 
 const Item = ({ prod }) => {
   const { formatNumber } = useCartContext();
-  const imgRuta = "%PUBLIC_URL%"+prod.urlImagen;
+  const imgRuta = prod.urlImagen;
  
   return (
     <Link to={`/item/${prod.id}`}>
