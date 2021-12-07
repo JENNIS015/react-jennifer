@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 
 const Homepage = () => {
-
   return (
     <div>
       <div className='carousel carousel-slider'>
@@ -10,7 +9,6 @@ const Homepage = () => {
         </NavLink>
       
       </div>
-
       <div className='container'>
         <div className='row'>
           <h1 className='categoriaTitle'>Ofertas Especiales</h1>
