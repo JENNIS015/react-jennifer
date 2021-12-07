@@ -1,6 +1,5 @@
 import React from "react";
-//import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Homepage from "./components/home/Homepage.jsx";
 import ItemDetailContainer from "./components/container/itemDetailContainer/ItemDetailContainer.jsx";
 import Cart from "./components/cart/Cart.jsx";
@@ -16,7 +15,7 @@ function App() {
   return (
     <div>
       <CartContextProvider>
-        <Router basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename ="/react-jennifer">
           <NavBar />
           <Switch>
             <Route exact path= '/'>
@@ -30,7 +29,7 @@ function App() {
             <Route path='/sucess' component={Sucess} />
           </Switch>
           <Footer />
-        </Router>
+        </BrowserRouter>
       </CartContextProvider>
     </div>
   );
