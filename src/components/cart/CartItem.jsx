@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const CartItem = (prod)=> {
   const { formatNumber, deleteItem } = useCartContext();
-
   const productos= prod.prod
   
   return (

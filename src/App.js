@@ -15,18 +15,18 @@ function App() {
   return (
     <div>
       <CartContextProvider>
-        <BrowserRouter>
-          <NavBar />
+        <BrowserRouter basename="/react-jennifer">
+          <NavBar/>
           <Switch>
-            <Route exact path='/react-jennifer'>
+            <Route exact path='/'>
               <Homepage />
               <ItemListContainer />
             </Route>
-            <Route exact path='/productos' component={ItemListContainer} />
-            <Route exact path='/categoria/:id' component={ItemListContainer} />
-            <Route exact path='/item/:id' component={ItemDetailContainer} />
-            <Route exact path='/cart' component={Cart} />
-            <Route exact path='/sucess' component={Sucess} />
+            <Route  path='/productos' component={ItemListContainer} />
+            <Route   path='/categoria/:id' component={ItemListContainer} />
+            <Route   path='/item/:id' component={ItemDetailContainer} />
+            <Route   path='/cart' component={Cart} />
+            <Route  path='/sucess' component={Sucess} />
           </Switch>
           <Footer />
         </BrowserRouter>

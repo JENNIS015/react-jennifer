@@ -5,6 +5,7 @@ import Loading from "../loading/Loading";
 import "../cart/css/estilo_sucess.css";
 import { getFirestore } from "../../services/getFirestore";
 const Sucess = () => {
+  
   const {
     dataOrder,
     detalleOrden,
