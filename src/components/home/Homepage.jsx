@@ -1,23 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
-import M from 'materialize-css/dist/js/materialize.min.js';
 
 const Homepage = () => {
-//   useEffect(() => {
-//     let carouselElem = document.querySelectorAll('.carousel.carousel-slider');
-        
-//   M.Carousel.init(carouselElem,{
-//       indicators : true,
-//       fullWidth : true,
-//       duration : 150
-//   });
-
-//     setTimeout(()=>{
-//      M.Carousel.getInstance(carouselElem[0]).next();
-//   },4000);
-
-// }, [])
-   
   return (
     <div>
       <div className='carousel carousel-slider'>
