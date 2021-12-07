@@ -15,16 +15,13 @@ function App() {
   return (
     <div>
       <CartContextProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/">
           <NavBar />
-        
+
           <Switch>
-          
             <Route exact path='/'>
               <Homepage />
-            
               <ItemListContainer />
-            
             </Route>
             <Route exact path='/productos' component={ItemListContainer} />
             <Route exact path='/categoria/:id' component={ItemListContainer} />
