@@ -18,7 +18,7 @@ function App() {
         <BrowserRouter>
           <NavBar />
           <Switch>
-            <Route exact path='/'>
+            <Route exact path='/react-jennifer'>
               <Homepage />
               <ItemListContainer />
             </Route>
