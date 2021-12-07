@@ -16,7 +16,7 @@ export const ItemDetail = ({ prod }) => {
 
   }
 
-  const imgUrl = process.env.PUBLIC_URL + prod.urlImagen;
+  const imgUrl = prod.urlImagen;
   return (
     <div className='col s12 m12 l12 flex' key={prod.id}>
       <div className='card'>
