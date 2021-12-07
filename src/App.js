@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+//import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Homepage from "./components/home/Homepage.jsx";
 import ItemDetailContainer from "./components/container/itemDetailContainer/ItemDetailContainer.jsx";
 import Cart from "./components/cart/Cart.jsx";
@@ -8,14 +9,14 @@ import { CartContextProvider } from "./context/CartContext";
 import Sucess from "./components/cart/Sucess";
 import NavBar from "./components/navbar/NavBar";
 import Footer from "./components/footer/Footer";
-//import "./css/style.css";
+import "./css/style.css";
 import "materialize-css/dist/css/materialize.min.css";
 
 function App() {
   return (
     <div>
       <CartContextProvider>
-        <BrowserRouter basename ="/react-jennifer">
+        <Router basename={process.env.PUBLIC_URL}>
           <NavBar />
           <Switch>
             <Route exact path= '/'>
@@ -29,7 +30,7 @@ function App() {
             <Route path='/sucess' component={Sucess} />
           </Switch>
           <Footer />
-        </BrowserRouter>
+        </Router>
       </CartContextProvider>
     </div>
   );
