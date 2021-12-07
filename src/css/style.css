@@ -5,7 +5,8 @@
   --color-oscuro: #252525;
   --color-blanco: #fff;
 }
-
+.carousel .carousel-item {
+   visibility: inherit  !important; }
 * {
   box-sizing: border-box;
   margin: 0;
