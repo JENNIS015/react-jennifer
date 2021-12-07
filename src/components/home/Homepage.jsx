@@ -6,10 +6,10 @@ const Homepage = () => {
       <div className='carousel carousel-slider'>
         <NavLink className='carousel-item' to='/productos'>
  
-          <img src='assets/image/portada.jpg' alt="MarketBA" />
+          <img src='/assets/image/portada.jpg' alt="MarketBA" />
         </NavLink>
         <NavLink className='carousel-item' to='/productos'>
-          <img src='assets/image/portada2.jpg' alt="MarketBA" />
+          <img src='/assets/image/portada2.jpg' alt="MarketBA" />
         </NavLink>
       </div>
 
