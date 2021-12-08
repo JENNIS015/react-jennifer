@@ -146,5 +146,7 @@ span {
   }
   .card .card-image img {
     height: 45vw!important;
+    width: 60%!important;
+    margin: auto;
   }
 }
