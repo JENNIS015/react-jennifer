@@ -5,6 +5,8 @@ Venta de articulos realizado para curso de React
 
 La aplicación fue creada con creat-react-app 17.0.2 como código base. 
 La página en vivo puede visualizarse en:
+[Ver Demo en Vivo](https://marketba-react.netlify.app/react-jennifer/)
+
 
 #### Dependencias adicionales.
 Utilice la libreria materialize-css v.1.0.0-rc.2 como complemento al css.
