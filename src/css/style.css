@@ -138,13 +138,13 @@ span {
 
 @media (max-width: 600px) {
   .carousel {
-    height: 150px;
+    height: 150px!important;
   }
 
   .container {
-    width: 95%;
+    width: 95%!important;
   }
   .card .card-image img {
-    height: 45vw;
+    height: 45vw!important;
   }
 }
