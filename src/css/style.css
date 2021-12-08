@@ -141,3 +141,12 @@ span {
   max-height: 420px!important;
   vertical-align: middle;
 }
+
+@media (max-width: 600px) {
+  .carousel {
+    height: 150px;
+  }
+
+  .container{
+    width: 90%;
+  }}
