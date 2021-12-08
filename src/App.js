@@ -15,16 +15,16 @@ function App() {
   return (
     <div>
       <CartContextProvider>
-        <BrowserRouter basename="/react-jennifer" forceRefresh={true}>
+        <BrowserRouter basename="/react-jennifer" >
           <NavBar/>
           <Switch>
             <Route exact path='/'>
               <Homepage />
               <ItemListContainer />
             </Route>
-            <Route  path='/productos' component={ItemListContainer} />
-            <Route   path='/categoria/:id' component={ItemListContainer} />
-            <Route   path='/item/:id' component={ItemDetailContainer} />
+            <Route  path='/productos' component={ItemListContainer} forceRefresh={true}/>
+            <Route   path='/categoria/:id' component={ItemListContainer} forceRefresh={true}/>
+            <Route   path='/item/:id' component={ItemDetailContainer} forceRefresh={true} />
             <Route   path='/cart' component={Cart} />
             <Route  path='/sucess' component={Sucess} />
           </Switch>
