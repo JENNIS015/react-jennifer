@@ -19,11 +19,13 @@ body {
   color: var(--color-oscuro);
   background: var(--color-fondo);
 }
-
-.container {
-  width: 60% !important;
+ 
+h3{
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5px;
 }
-
 .cantidadAgregada {
   margin: 10px;
 }
@@ -31,7 +33,15 @@ body {
 .quantity-input {
   text-align: center;
 }
+.flex{
+  display: flex;
+}
 
+.discovery_body{
+  display:flex;
+  padding-right: 8px;
+  width: 100%;
+}
 h1 {
   text-align: left;
   font-size: calc(1rem + 1.5vw);
@@ -149,4 +159,8 @@ span {
     width: 60%!important;
     margin: auto;
   }
+}
+
+#root{
+  background-color: #f1f1f1
 }

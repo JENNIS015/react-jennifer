@@ -7,6 +7,7 @@ const NavBarMobile = ({ categorias }) => {
   useEffect(() => {
     var sidenav = document.querySelectorAll(".sidenav");
     M.Sidenav.init(sidenav, {});
+
   }, []);
 
   return (

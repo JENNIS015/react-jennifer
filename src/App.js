@@ -10,7 +10,7 @@ import { CartContextProvider } from "./context/CartContext";
 import Sucess from "./components/cart/Sucess";
 import NavBar from "./components/navbar/NavBar";
 import Footer from "./components/footer/Footer";
-
+ 
 function App() {
   return (
     <div>
@@ -20,7 +20,7 @@ function App() {
           <Switch>
             <Route exact path='/'>
               <Homepage />
-              <ItemListContainer />
+           
             </Route>
             <Route  path='/productos' component={ItemListContainer} forceRefresh={true}/>
             <Route   path='/categoria/:id' component={ItemListContainer} forceRefresh={true}/>

@@ -36,7 +36,7 @@ export const ItemListContainer = () => {
   return loading ? (
     <Loading />
   ) : (
-    <div className='container'>
+
       <div className='row'>
         {id ? (
           <>
@@ -48,6 +48,6 @@ export const ItemListContainer = () => {
         )}
         <ItemList prod={products} key={products.id} />
       </div>
-    </div>
+
   );
 };
