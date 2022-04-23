@@ -134,14 +134,14 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-     /* background: url("/assets/image/") no-repeat center center /
-      16px;   */
+     
     width: 32px;
     height: 32px;
     text-indent: -9999px;
     cursor: pointer;
   }
   
+
   /* .previousButton:hover,
   .nextButton:hover {
     background: url("http://svgshare.com/i/41_.svg") no-repeat center center /
@@ -149,6 +149,8 @@
   } */
   
   .previousButton {
+    background: url("https://icons8.com/icon/100033/galón-derecho") no-repeat center center /
+    16px;   
     left: 0;
     -webkit-transform: rotate(180deg) translateY(calc(50% + 0px));
     transform: rotate(180deg) translateY(calc(50% + 0px));
@@ -159,6 +161,8 @@
   }
   
   .nextButton {
+    background: url("https://icons8.com/icon/100033/galón-izquierdo") no-repeat center center /
+    16px;   
     right: 0;
   }
   

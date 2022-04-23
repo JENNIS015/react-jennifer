@@ -22,6 +22,7 @@ image: "/assets/image/home/support.png"
 ]
 return (
 
+
 <div className='row'>
     {content.map(banner=>
     <div className='col l3 m6 s6'>
