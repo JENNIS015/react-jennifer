@@ -5,7 +5,7 @@ import "./css/style.css";
 import Homepage from "./components/home/Homepage.jsx";
 import ItemDetailContainer from "./components/container/itemDetailContainer/ItemDetailContainer.jsx";
 import Cart from "./components/cart/Cart.jsx";
-import { ItemListContainer } from "./components/container/itemListContainer/ItemListContainer.jsx";
+import   ItemListContainer   from "./components/container/itemListContainer/ItemListContainer.jsx";
 import { CartContextProvider } from "./context/CartContext";
 import Sucess from "./components/cart/Sucess";
 import NavBar from "./components/navbar/NavBar";
@@ -24,7 +24,7 @@ function App() {
             </Route>
             <Route  path='/productos' component={ItemListContainer} forceRefresh={true}/>
             <Route   path='/categoria/:id' component={ItemListContainer} forceRefresh={true}/>
-            <Route   path='/item/:id' component={ItemDetailContainer} forceRefresh={true} />
+            <Route   path='/product/:slug' component={ItemDetailContainer} forceRefresh={true} />
             <Route   path='/cart' component={Cart} />
             <Route  path='/sucess' component={Sucess} />
           </Switch>

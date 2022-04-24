@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import SliderItem from "./SliderItem";
 import Banner from "./Banner";
-import { ItemListContainer } from "../container/itemListContainer/ItemListContainer";
+import  ItemListContainer   from "../container/itemListContainer/ItemListContainer";
 import BannerIcons from "./BannerIcons";
 const Homepage = () => {
 return (
