@@ -4,17 +4,18 @@ import "materialize-css/dist/css/materialize.min.css";
 import "./css/style.css";
 import Homepage from "./components/home/Homepage.jsx";
 import ItemDetailContainer from "./components/container/itemDetailContainer/ItemDetailContainer.jsx";
-import Cart from "./components/cart/Cart.jsx";
+import CartPage from "./components/cart/CartPage";
 import   ItemListContainer   from "./components/container/itemListContainer/ItemListContainer.jsx";
-import { CartContextProvider } from "./context/CartContext";
-import Sucess from "./components/cart/Sucess";
+import { CartContextProvider } from "./context/AppContext";
+ 
 import NavBar from "./components/navbar/NavBar";
 import Footer from "./components/footer/Footer";
+import Checkout from "./components/checkout/Checkout";
  
 function App() {
   return (
     <div>
-      <CartContextProvider>
+       <CartContextProvider>
         <BrowserRouter basename="/react-jennifer" >
           <NavBar/>
           <Switch>
@@ -23,10 +24,11 @@ function App() {
            
             </Route>
             <Route  path='/productos' component={ItemListContainer} forceRefresh={true}/>
-            <Route   path='/categoria/:id' component={ItemListContainer} forceRefresh={true}/>
+            {/* <Route   path='/categoria/:id' component={ItemListContainer} forceRefresh={true}/> */}
             <Route   path='/product/:slug' component={ItemDetailContainer} forceRefresh={true} />
-            <Route   path='/cart' component={Cart} />
-            <Route  path='/sucess' component={Sucess} />
+            <Route   path='/cart' component={CartPage} />
+            <Route   path='/checkout' component={Checkout} />
+            {/* <Route  path='/sucess' component={Sucess} /> */}
           </Switch>
           <Footer />
         </BrowserRouter>

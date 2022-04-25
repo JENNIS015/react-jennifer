@@ -52,29 +52,11 @@ const PRODUCTS_AND_CATEGORIES_QUERY = gql `
           price(format: RAW)
           regularPrice(format: RAW)
           id
-        }
-        ... on VariableProduct {
-          price(format: RAW)
-          id
-          regularPrice(format: RAW)
-        }
-        ... on ExternalProduct {
-          price(format: RAW)
-          id
-          externalUrl
-          regularPrice(format: RAW)
-        }
-        ... on GroupProduct {
-          id
-          products {
-            nodes {
-              ... on SimpleProduct {
-                id
-                price(format: RAW)
-                regularPrice
-              }
-            }
-          }
+          stockQuantity
+          stockStatus
+
+ 
+     
         }
       }
     }
@@ -82,3 +64,26 @@ const PRODUCTS_AND_CATEGORIES_QUERY = gql `
 `;
 
 export default PRODUCTS_AND_CATEGORIES_QUERY;
+
+// ... on VariableProduct {
+//   price(format: RAW)
+//   id
+//   regularPrice(format: RAW)
+// }
+// ... on ExternalProduct {
+//   price(format: RAW)
+//   id
+//   externalUrl
+//   regularPrice(format: RAW)
+// }
+// ... on GroupProduct {
+//   id
+//   products {
+//     nodes {
+//       ... on SimpleProduct {
+//         id
+//         price(format: RAW)
+//         regularPrice
+//       }
+//     }
+//   }

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useCartContext } from "../../context/CartContext";
+// import { useCartContext } from "../../context/CartContext";
 
 const Item = ({ prod }) => {
-  const { formatNumber } = useCartContext();
+  // const { formatNumber } = useCartContext();
   const imgUrl = prod.urlImagen;
 
   return (
@@ -18,7 +18,7 @@ const Item = ({ prod }) => {
             <span>{`${prod.nombre.slice(0, 30) + "..."}`}</span>
 
             <p className='mayuscula prod-categoria'>{`${prod.categoria}`}</p>
-            <div className='prod-price'>{formatNumber(prod.price)}</div>
+            <div className='prod-price'>{ (prod.price)}</div>
           </div>
         </div>
       </div>

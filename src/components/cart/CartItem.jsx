@@ -1,42 +1,107 @@
-import React from "react";
-import { useCartContext } from "../../context/CartContext";
-import { Link } from "react-router-dom";
+import { useState } from 'react'
+// import { v4 } from 'uuid'
+import { useCartContext } from '../../context/AppContext'
+// import { getUpdatedItems } from '../../functions'
+import { updateCart } from '../../functions'
+const CartItem = ({ item,    handleRemoveProductClick}) => {
 
-const CartItem = (prod)=> {
-  const { formatNumber, deleteItem } = useCartContext();
-  const productos= prod.prod
-  
+
+  const [productCount, setProductCount] = useState(item.qty)
+  const { setCart } = useCartContext()
+  /*
+   * When user changes the qty from product input update the cart in localStorage
+   * Also update the cart in global context
+   *
+   * @param {Object} event event
+   *
+   * @return {void}
+   */
+  const handleQtyChange = (event, cartKey) => {
+    if (process.browser) {
+      // event.stopPropagation()
+
+      // // If the previous update cart mutation request is still processing, then return.
+      // if (updateCartProcessing) {
+      //   return
+      // }
+
+      //     If the user tries to delete the count of product, set that to 1 by default ( This will not allow him to reduce it less than zero )
+      const newQty = event.target.value
+ 
+      // Set the new qty in state.
+      setProductCount(newQty)
+
+      let existingCart = localStorage.getItem('cart')
+      existingCart = JSON.parse(existingCart)
+
+      //update cart
+      let qtyToBeAdded = false
+      const updatedCart = updateCart(existingCart, item, qtyToBeAdded, newQty)
+
+      setCart(updatedCart)
+      //     if (products.length) {
+      //       const updatedItems = getUpdatedItems(products, newQty, cartKey)
+
+      // updateCart({
+      //         variables: {
+      //           input: {
+      //             clientMutationId: v4(),
+      //             items: updatedItems,
+      //           },
+      //         },
+      //       })
+      //     }
+    }
+  }
+
   return (
-    <tr>
-      <td>
+    <tr className="woo-next-cart-item" key={item.productId}>
+      <th className="woo-next-cart-element woo-next-cart-el-close">
+        {/* Remove item */}
+        <span
+          className="woo-next-cart-close-icon cursor-pointer"
+          onClick={(event) =>
+            handleRemoveProductClick(event, item.productId)
+          }
+        >
+         <i class="material-icons">delete</i>
+        </span>
+      </th>
+      <td className="woo-next-cart-element">
         <img
-          src={productos.urlImagen}
-          className='cart'
-          alt={productos.nombre}
+          width="64"
+          src={item.image.sourceUrl}
+          srcSet={item.image.srcSet}
+          alt={item.image.title}
+        />
+      </td>
+      <td className="woo-next-cart-element">{item.name}</td>
+      <td className="woo-next-cart-element">
+        {'string' !== typeof item.price ? item.price.toFixed(2) : item.price}
+      </td>
+
+      {/* Qty Input */}
+      <td className="woo-next-cart-element woo-next-cart-qty">
+        {/* @TODO Need to update this with graphQL query */}
+        <input
+          type="number"
+          min="1"
+          // data-cart-key={item.cartKey}
+          className="woo-next-cart-qty-input"
+          value={productCount}
+          onChange={handleQtyChange}
         />
       </td>
 
-      <td>
-        <Link to={`/item/${productos.id}`}>
-          <p>{`${productos.nombre}`}</p>
-          <p>x {productos.cantidad}</p>
-        </Link>
-      </td>
-      <td>
-        <p>{formatNumber(productos.price)}</p>
-      </td>
-    
-      <td>
-        <p className="strong">{formatNumber(productos.cantidad * productos.price)}</p>
-      </td>
+      <td className="woo-next-cart-element">
+        {/* {'string' !== typeof item.totalPrice
+          ? item.totalPrice.toFixed(2)
+          : item.totalPrice} */}
 
-    <td className="borrar">
-        <button onClick={() => deleteItem(productos.id)}>
-          <i className='tiny material-icons'>delete</i>
-        </button>
+        {item.totalPrice.toFixed(2)}
       </td>
-      
     </tr>
-  );
+  )
 }
+
 export default CartItem

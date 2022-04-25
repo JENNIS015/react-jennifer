@@ -193,3 +193,10 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
   background-color: #150c7b;
   color: aliceblue;
 }
+
+  .cartPriceNav span{
+  color:white!important
+  }
+    .cartItemNav{
+color:white!important
+}

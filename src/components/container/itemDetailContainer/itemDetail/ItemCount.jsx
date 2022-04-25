@@ -22,9 +22,9 @@ const ItemCount = ({ initial, stock, onAdd }) => {
           -
         </button>
         <span className='number-input'>{count}</span>
-        <span className='plus' onClick={aumentarContador}>
+        <button className='plus' onClick={aumentarContador}>
           +
-        </span>
+        </button>
       </div>
 
       <div className='agregarCarrito'>

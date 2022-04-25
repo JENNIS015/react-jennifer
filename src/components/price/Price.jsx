@@ -1,7 +1,7 @@
 import {isEmpty} from "lodash";
-import { useCartContext } from "../../context/CartContext";
+import { useCartContext } from "../../context/AppContext";
 const Price = ({ regularPrice = 0, salesPrice }) => {
-    const { formatNumber } = useCartContext();
+    // const { formatNumber } = useCartContext();
     if ( isEmpty( salesPrice ) ) {
     	return null;
     }
@@ -34,10 +34,10 @@ const Price = ({ regularPrice = 0, salesPrice }) => {
         <div className="product-price">
             {/* Regular price */}
 
-            { productMeta?.discountPercent ? <span className="product-price-discount">{formatNumber(salesPrice)}</span> : null }
+            { productMeta?.discountPercent ? <span className="product-price-discount">{ (salesPrice)}</span> : null }
 
             {/* Discounted price */}
-            <div className="discount"><span className="regular-price">{formatNumber(regularPrice) }</span>
+            <div className="discount"><span className="regular-price">{ (regularPrice) }</span>
 
             {/* Discount percent */}
             <span className="price-discount">{productMeta?.discountPercent}  </span>
