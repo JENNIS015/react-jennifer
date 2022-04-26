@@ -7,7 +7,7 @@ export const useCartContext = () => useContext(CartContext);
 export const CartContextProvider = ({children}) => {
 
   const [cart, setCart] = useState(() => {
-    return JSON.parse(localStorage.getItem("cart")) || [];
+    return JSON.parse(localStorage.getItem("cart")) || null;
   });
  
   return (

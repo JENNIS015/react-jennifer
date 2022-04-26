@@ -23,18 +23,7 @@ const PRODUCTS_AND_CATEGORIES_QUERY = gql `
       }
     }
   }
-  productCategories(first: 3) {
-    nodes {
-      id
-      name
-      slug
-      image {
-        id
-        sourceUrl
-        srcSet
-      }
-    }
-  }
+ 
     products(first: 20) {
       nodes {
         id

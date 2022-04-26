@@ -20,8 +20,12 @@ export default function Product(props) {
                   className="imgCard"
                   loading="lazy"
                   src={
-                    product?.image?.sourceUrl ?? DEFAULT_PRODUCT_HOME_IMG_URL
+                    product.image.sourceUrl  
                   }
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null; // prevents looping
+                    currentTarget.src=DEFAULT_PRODUCT_HOME_IMG_URL
+                  }}
                   alt={product?.image?.altText ?? product?.slug}
                 />
               </a>

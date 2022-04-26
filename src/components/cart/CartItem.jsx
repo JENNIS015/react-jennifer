@@ -2,7 +2,7 @@ import { useState } from 'react'
 // import { v4 } from 'uuid'
 import { useCartContext } from '../../context/AppContext'
 // import { getUpdatedItems } from '../../functions'
-import { updateCart } from '../../functions'
+import { updateCart,formatNumber } from '../../functions'
 const CartItem = ({ item,    handleRemoveProductClick}) => {
 
 
@@ -77,7 +77,7 @@ const CartItem = ({ item,    handleRemoveProductClick}) => {
       </td>
       <td className="woo-next-cart-element">{item.name}</td>
       <td className="woo-next-cart-element">
-        {'string' !== typeof item.price ? item.price.toFixed(2) : item.price}
+        {'string' !== typeof item.price ? formatNumber(item.price.toFixed(2)) : item.price}
       </td>
 
       {/* Qty Input */}
@@ -98,7 +98,7 @@ const CartItem = ({ item,    handleRemoveProductClick}) => {
           ? item.totalPrice.toFixed(2)
           : item.totalPrice} */}
 
-        {item.totalPrice.toFixed(2)}
+        {formatNumber(item.totalPrice.toFixed(2))}
       </td>
     </tr>
   )

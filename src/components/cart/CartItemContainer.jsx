@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import {  useState } from 'react';
 import {   useCartContext } from "../../context/AppContext";
-import { getFormattedCart, getUpdatedItems, removeItemFromCart} from "../../functions"
+import { getFormattedCart, getUpdatedItems, removeItemFromCart, formatNumber} from "../../functions"
 import CartItem from "./CartItem";
 import { v4 } from 'uuid';
 import { useMutation, useQuery } from '@apollo/client';
@@ -108,10 +108,10 @@ const CartItemsContainer = () => {
 	// 		},
 	// 	} );
 	// }
- 
+ console.log("CART",cart)
 	return (
 		<div className="cart product-cart-container container mx-auto my-32 px-4 xl:px-0">
-			{ cart ? (
+			{  cart!=null? (
 				<div className="woo-next-cart-wrapper container">
 					<div className="cart-header grid grid-cols-2 gap-4">
 						<h1 className="text-2xl mb-5 uppercase">Cart</h1>
@@ -163,11 +163,11 @@ const CartItemsContainer = () => {
 									<tr className="table-light flex flex-col">
 										<td className="woo-next-cart-element-total text-2xl font-normal">Subtotal</td>
 										<td className="woo-next-cart-element-amt text-2xl font-bold">
-                                            { cart.totalProductsPrice}</td>
+                                            {formatNumber(cart.totalProductsPrice)}</td>
 									</tr>
 									<tr className="table-light">
 										<td className="woo-next-cart-element-total">Total</td>
-										<td className="woo-next-cart-element-amt">{   cart.totalProductsPrice}</td>
+										<td className="woo-next-cart-element-amt">{   formatNumber(cart.totalProductsPrice)}</td>
 									</tr>
 									</tbody>
 								</table>
