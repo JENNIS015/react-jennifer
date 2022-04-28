@@ -5,7 +5,6 @@ import GET_CART from '../query/get_cart'
 import ADD_TO_CART from '../mutation/addToCart'
 import React, { useState, useContext, useEffect } from 'react'
 import { useQuery, useMutation } from '@apollo/client'
-import { useLazyQuery } from '@apollo/client';
 import Link from 'next/link'
 
   const AddToCart = (props) => {
@@ -24,11 +23,6 @@ import Link from 'next/link'
 
   // Get Cart Data.
 
-
-
-
-
-  // Add to Cart Mutation.
   const [
     addToCart,
     { data: addToCartRes, loading: addToCartLoading, error: addToCartError },

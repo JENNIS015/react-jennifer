@@ -3,7 +3,7 @@ import { AppContext } from '../../context/AppContext';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { isEmpty } from "lodash";
 import Link from 'next/link';
-
+ 
 const CartDown = ({ isDropdownOpen }) => {
 
 	const [ cart ] = useContext( AppContext );
@@ -18,7 +18,7 @@ const CartDown = ({ isDropdownOpen }) => {
 	const productImagePlaceholder = "https://via.placeholder.com/70";
 
 	return (
-		<div className={ `shopping-cart ${ isDropdownOpen ? 'is-open' : '' }` }>
+		<div className={ `shopping-cart ${ isDropdownOpen ? 'styles.is-open' : '' }` }>
 			<div className="shopping-cart-header">
 				<div className="cart-icon-wrp">
 					<Link href="/cart" className="">
